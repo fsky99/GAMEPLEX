@@ -5,11 +5,11 @@ const Schema = mongoose.Schema
 const sessionScehma = new Schema({
   content : {
   playersIds:  [{ type: Schema.Types.ObjectId ,
-    ref: 'playersId' }],
+    ref: 'User' }],
 location : String ,
 date : Date ,
 gamesId:  [{ type: Schema.Types.ObjectId ,
-  ref: 'gamesId'}],
+  ref: 'Game'}],
 max : Number
   },
   timestamp: true
