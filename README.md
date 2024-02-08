@@ -3,9 +3,8 @@
 ## Date : 2/7/2024
 
 ### Made By:  
+## Shaikha Ebrahim  - Jassim Ahmed  - Fatima Fouad
 
-
-----
 ### **_Description_**
 GamePlex is a website to book session for games, so you can book sessions with people online, you acn specify the number of players you like to book your session, and many more.
 
