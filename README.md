@@ -23,19 +23,19 @@ You can book sessions with people online, Also you acn specify the number of pla
 ## Wireframe:
 <table>
   <tr>
-    <td> Home Page <img src="P1.PNG" alt="PageSeven" style="width:300px;"></td>
-    <td>Games List   <img src="P2.PNG" alt="PageOne" style="width:300px;"></td>
-     <td>Add New Game<img src="P5.PNG" alt="PageFive" style="width:300px;"></td>
+    <td> Home Page <img src="P1.PNG" alt="P1" style="width:300px;"></td>
+    <td>Games List   <img src="P2.PNG" alt="P2" style="width:300px;"></td>
+     <td>Add New Game<img src="P5.PNG" alt="P5" style="width:300px;"></td>
    
   </tr>
   <tr>
   <td>Booking Sessions<img src="P4.PNG" alt="PageFour" style="width:300px;"></td>
-    <td>Booked Sessions<img src="P6.png" alt="PageTwo" style="width:300px;"></td>
-    <td>Game Session<img src="P3.PNG" alt="PageThree" style="width:300px;"></td>
+    <td>Booked Sessions<img src="P6.png" alt="P6" style="width:300px;"></td>
+    <td>Game Session<img src="P3.PNG" alt="P3" style="width:300px;"></td>
   </tr>
   <tr>
   <td></td>
-   <td>Profile Page<img src="P7.PNG" alt="PageSix" style="width:300px;"></td>
+   <td>Profile Page<img src="P7.PNG" alt="P7" style="width:300px;"></td>
      <td></td>
 
   </tr>
