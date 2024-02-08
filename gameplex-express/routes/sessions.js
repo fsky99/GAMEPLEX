@@ -1,7 +1,7 @@
-const express = require("express")
+const express = require('express')
 const router = express.Router()
-const sessionsCtrl = require("../controller/sessions")
+const sessionsCtrl = require('../controllers/sessions')
 
-router.post("/games/:id/sessions", sessionsCtrl.create)
+router.post('/games/:id/sessions', sessionsCtrl.create)
 
 module.exports = router
