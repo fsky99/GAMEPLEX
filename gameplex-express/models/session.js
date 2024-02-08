@@ -2,7 +2,7 @@ const mongoose = require('mongoose')
 
 const Schema = mongoose.Schema
 
-const sessionScehma = new Schema({
+const sessionSchema = new Schema({
   content : {
   playersIds:  [{ type: Schema.Types.ObjectId ,
     ref: 'User' }],
@@ -15,4 +15,4 @@ max : Number
   timestamp: true
 })
 
-module.exports = mongoose.model('Session', sessionScehma)
+module.exports = mongoose.model('Session', sessionSchema)
