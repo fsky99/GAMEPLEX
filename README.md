@@ -24,7 +24,7 @@ You can book sessions with people online, Also you acn specify the number of pla
 ## Home Page  ![Home Page](P1.png)
 ## Games List ![Games List](P2.png)
 ## Add New Game ![Add New Game](P5.png)
-## Booking Sessions ![Booking Sessions](P4.PNG)
+## Booking Sessions ![Booking Sessions](P4.png)
 ## Booked Sessions ![Booked Sessions](P6.png)
 ## Game Session ![Game Session](P3.png)
 ## Profile Page ![Profile Page](P7.png)
