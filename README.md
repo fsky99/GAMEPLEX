@@ -21,13 +21,13 @@ You can book sessions with people online, Also you acn specify the number of pla
 ## ERD:
 ## ![ERD](Gameplex.drawio.png)
 ## Wireframe:
-## Home Page  ![Home Page](P1.PNG)
-## Games List ![Games List](P2.PNG)
-## Add New Game ![Add New Game](P5.PNG)
+## Home Page  ![Home Page](P1.png)
+## Games List ![Games List](P2.png)
+## Add New Game ![Add New Game](P5.png)
 ## Booking Sessions ![Booking Sessions](P4.PNG)
 ## Booked Sessions ![Booked Sessions](P6.png)
-## Game Session ![Game Session](P3.PNG)
-## Profile Page ![Profile Page](P7.PNG)
+## Game Session ![Game Session](P3.png)
+## Profile Page ![Profile Page](P7.png)
 
 
 ### Technologies used
