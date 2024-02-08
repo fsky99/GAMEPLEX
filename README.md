@@ -21,31 +21,15 @@ You can book sessions with people online, Also you acn specify the number of pla
 ## ERD:
 ## ![ERD](Gameplex.drawio.png)
 ## Wireframe:
-<table>
-  <tr>
-    <td> Home Page <img src="P1.PNG" alt="P1" style="width:300px;"></td>
-    <td>Games List   <img src="P2.PNG" alt="P2" style="width:300px;"></td>
-     <td>Add New Game<img src="P5.PNG" alt="P5" style="width:300px;"></td>
-   
-  </tr>
-  <tr>
-  <td>Booking Sessions<img src="P4.PNG" alt="PageFour" style="width:300px;"></td>
-    <td>Booked Sessions<img src="P6.png" alt="P6" style="width:300px;"></td>
-    <td>Game Session<img src="P3.PNG" alt="P3" style="width:300px;"></td>
-  </tr>
-  <tr>
-  <td></td>
-   <td>Profile Page<img src="P7.PNG" alt="P7" style="width:300px;"></td>
-     <td></td>
-
-  </tr>
-</table>
+## Home Page  ![Home Page](P1.PNG)
+## Games List ![Games List](P2.PNG)
+## Add New Game ![Add New Game](P5.PNG)
+## Booking Sessions ![Booking Sessions](P4.PNG)
+## Booked Sessions ![Booked Sessions](P6.png)
+## Game Session ![Game Session](P3.PNG)
+## Profile Page ![Profile Page](P7.PNG)
 
 
-
-
-
----
 ### Technologies used
 
 - [x] VSCode (Editor for Writing the Code)
