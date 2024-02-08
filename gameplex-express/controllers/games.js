@@ -13,7 +13,7 @@ async function index(req,res){
 }
 
 async function show(req, res) {
-  const game = await Game.findById(req.params.id)
+  const game = await Game.findById(req.params.id).populate('sessionId')
   res.render('games/show', { title: 'Game Detail', game });
 }
 
