@@ -12,7 +12,9 @@ gameId:  { type: Schema.Types.ObjectId ,
   ref: 'Game'},
 max : Number
   },
-  timestamp: true
+},
+{
+  timestamps: true
 })
 
 module.exports = mongoose.model('Session', sessionSchema)

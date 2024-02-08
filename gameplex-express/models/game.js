@@ -9,7 +9,10 @@ const gamesSchema = new Schema({
     poster: String,
     sessionIds: [{ type: Schema.Types.ObjectId ,ref: 'sessionId' }],
   },
-  timestamp: true,
-})
+},
+{
+  timestamps: true
+}
+)
 
 module.exports = mongoose.model('Games', gamesSchema)
