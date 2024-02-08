@@ -41,6 +41,7 @@ You can book sessions with people online, Also you acn specify the number of pla
 - [x] Canva (Early map desgin of the game)
 - [x] Google Fonts (Fonts for the page)
 - [x] Trelllo (Managment for the work)
+- [x] Drawio (ERD for the database)
 
 
 
@@ -62,3 +63,5 @@ You can book sessions with people online, Also you acn specify the number of pla
 ### **_Credits_**
 
 ##### Canva: [Canva](https://www.canva.com/)
+##### Drawio: [Draw](https://app.diagrams.net/)
+
