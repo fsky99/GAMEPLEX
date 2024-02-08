@@ -7,7 +7,7 @@
 
 ----
 ### **_Description_**
-
+GamePlex is a website to book session for games, so you can book sessions with people online, you acn specify the number of players you like to book your session, and many more.
 
 
 ---
@@ -36,6 +36,10 @@
 - [x] VSCode (Editor for Writing the Code)
 - [x] HTML (Structure of the pages)
 - [x] CSS (Style of the pages)
+- [x] Express (API Calls)
+- [x] MongoDB (Databse)
+
+
 
 
 ---
