@@ -8,8 +8,8 @@ const sessionSchema = new Schema({
     ref: 'User' }],
 location : String ,
 date : Date ,
-gamesId:  [{ type: Schema.Types.ObjectId ,
-  ref: 'Game'}],
+gameId:  { type: Schema.Types.ObjectId ,
+  ref: 'Game'},
 max : Number
   },
   timestamp: true
