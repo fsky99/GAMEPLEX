@@ -9,7 +9,8 @@ const methodOverride = require('method-override')
 
 var indexRouter = require('./routes/index')
 var usersRouter = require('./routes/users')
-
+var gamesRouter = require('./routes/games')
+var sessionsRouter = require('./routes/sessions')
 require('dotenv').config()
 require('./config/database')
 require('./config/passport')
@@ -29,6 +30,8 @@ app.use(methodOverride('_method'))
 
 app.use('/', indexRouter)
 app.use('/users', usersRouter)
+app.use('/games',gamesRouter)
+app.use('/' , sessionsRouter)
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
