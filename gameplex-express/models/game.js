@@ -7,7 +7,7 @@ const gamesSchema = new Schema({
     name: String,
     type: String,
     poster: String,
-    sessionIds: [{ type: Schema.Types.ObjectId }],
+    sessionIds: [{ type: Schema.Types.ObjectId ,ref: 'sessionId' }],
   },
   timestamp: true,
 })
