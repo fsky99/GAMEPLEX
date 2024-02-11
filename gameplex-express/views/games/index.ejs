@@ -8,8 +8,10 @@
 <table id="list">
     <thead>
       <tr>
-        <th>Title</th>
-        
+        <th>Name</th>
+        <th>Type</th>
+        <th>Poster</th>
+
         <th></th>
       </tr>
     </thead>
@@ -18,7 +20,7 @@
         <tr>
           <td><%= g.name %></td>
           <td><%= g.type %></td>
-          <td><%= g.poster %></td>
+          <td><img src="<%= g.poster %>"></td>
 
         </tr>
         <% }); %>
