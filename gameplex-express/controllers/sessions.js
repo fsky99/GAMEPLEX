@@ -68,4 +68,37 @@ const leave = async (req, res) => {
   }
 }
 
-module.exports = { create: createSession, join, leave }
+const removeSession = async (req, res) => {
+  try {
+    const session = Session.findById(req.params.id)
+    session.playersIds.forEach(async (id) => {
+      await User.updateOne(
+        { _id: id },
+        {
+          $pullAll: {
+            sessionsId: req.params.id
+          }
+        }
+      )
+      await User.save()
+    })
+    await Game.updateOne(
+      { _id: req.query.id },
+      {
+        $pullAll: {
+          sessionIds: req.params.id
+        }
+      }
+    )
+    await Game.save()
+    await Session.deleteOne({ _id: req.params.id })
+    await Session.save()
+
+    res.redirect(`/games/${req.query.id}`)
+  } catch (error) {
+    console.log(error)
+    res.redirect(`/games/${req.query.id}`)
+  }
+}
+
+module.exports = { create: createSession, remove: removeSession, join, leave }
