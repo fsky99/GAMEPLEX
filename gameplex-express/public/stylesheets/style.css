@@ -11,6 +11,12 @@ img {
   width: 50px;
   height: 50px;
 }
+
+h1 {
+  color: #1cae89;
+  font-family: "Trebuchet MS";
+}
+
 .input {
   color: #fff;
   font-size: 0.9rem;
@@ -22,6 +28,7 @@ img {
   border: none;
   border-bottom: var(--border-height) solid var(--border-before-color);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  font-family: "Trebuchet MS";
 }
 
 .input-border {
@@ -69,12 +76,13 @@ img {
   overflow: hidden;
   height: 3rem;
   padding: 0 2rem;
-  border-radius: 1.5rem;
-  background: #3d3a4e;
+  border-radius: 0.2rem;
+  background: #031118;
   background-size: 400%;
   color: #fff;
   border: none;
   cursor: pointer;
+  font-family: "Trebuchet MS";
 }
 
 .button:hover::before {
@@ -96,10 +104,6 @@ img {
   width: 100%;
   height: inherit;
   border-radius: inherit;
-  background: linear-gradient(
-    82.3deg,
-    rgba(150, 93, 233, 1) 10.8%,
-    rgba(99, 88, 238, 1) 94.3%
-  );
+  background: linear-gradient(82.3deg, #25dfba 10.8%, #1f5459 94.3%);
   transition: all 0.475s;
 }
