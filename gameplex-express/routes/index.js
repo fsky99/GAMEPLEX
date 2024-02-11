@@ -13,5 +13,12 @@ router.get(
     scope: ["profile", "email"],
   })
 )
+router.get(
+  "/oauth2callback",
+  passport.authenticate("google", {
+    successRedirect: "/games",
+    failureRedirect: "/games",
+  })
+)
 
 module.exports = router
