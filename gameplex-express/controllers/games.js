@@ -18,7 +18,7 @@ async function show(req, res) {
 }
 
 function newGame(req, res) {
-  res.render("games/new", { title: "Add Game", errorMsg: "" })
+  res.render("games/new", { title: "Add New Game", errorMsg: "" })
 }
 async function create(req, res) {
   console.log(req.body)
