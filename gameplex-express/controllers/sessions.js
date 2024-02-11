@@ -73,27 +73,26 @@ const leave = async (req, res) => {
 
 const removeSession = async (req, res) => {
   try {
-    const session = Session.findById(req.params.id)
-    session.playersIds.forEach(async (id) => {
+    const session = await Session.findById(req.params.id)
+    console.log(req.params.id)
+    for (let i = 0; i < session.playersIds.length; i++) {
       await User.updateOne(
-        { _id: id },
+        { _id: session.playersIds[i] },
         {
           $pullAll: {
-            sessionsId: req.params.id
+            sessionsId: [req.params.id]
           }
         }
       )
-      await User.save()
-    })
+    }
     await Game.updateOne(
       { _id: req.query.id },
       {
         $pullAll: {
-          sessionIds: req.params.id
+          sessionIds: [req.params.id]
         }
       }
     )
-    await Game.save()
     await Session.deleteOne({ _id: req.params.id })
     await Session.save()
 
