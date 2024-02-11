@@ -14,6 +14,9 @@ const createSession = async (req, res) => {
     const game = await Game.findById(req.params.id)
     game.sessionIds.push(session._id)
     await game.save()
+    const user = await User.findById(req.user._id)
+    user.sessionsId.push(session._id)
+    await user.save()
 
     await res.redirect(`/games/${req.params.id}`)
   } catch (err) {
@@ -38,4 +41,4 @@ const addPlayer = async (req, res) => {
   }
 }
 
-module.exports = { create: createSession }
+module.exports = { create: createSession, add: addPlayer }
