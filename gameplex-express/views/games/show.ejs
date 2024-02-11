@@ -17,10 +17,15 @@
             </span>
             <h6><%= session.playersIds.length %>/<%= session.max %></h6>
         </div>
+        <%if (user){ 
+        if (user.googleId === session.playersIds[0].googleId) {%>
         <form action="/sessions/<%= session._id %>?_method=DELETE&id=<%= game._id %>" method="post">
             <input type="submit" value="Remove Session">
         </form>
-<%})} %>
+        <% if (session.playersIds.some(obj => obj.googleId === user.googleId)) { %>
+
+        <%} %>
+<%}})} %>
 <form action="/games/<%= game._id %>/sessions" method="post">
     <input type="text" placeholder="Location" name="location">
     <input type="date" placeholder="Date" name="date">
