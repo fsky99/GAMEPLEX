@@ -12,13 +12,19 @@
             <h6>Players: <%= session.playersIds.length %>/<%= session.max %></h6>
             <span>
                 <h6>Players</h6>
-                <% sessions.playersIds.forEach(player => { %>
+                <% session.playersIds.forEach(player => { %>
                     <%= player.name %>
                 <% }); %>
             </span>
             <h6><%= session.playersIds.length %>/<%= session.max %></h6>
         </div>
 <%})} %>
+<form action="/games/<%= game._id %>/sessions" method="post">
+    <input type="text" placeholder="Location" name="location">
+    <input type="date" placeholder="Date" name="date">
+    <input type="number" placeholder="Max Players" name="max">
+    <input type="submit" value="Create Session">
+</form>
 
 <%- include('../partials/footer') %>
 
