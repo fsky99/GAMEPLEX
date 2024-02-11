@@ -22,11 +22,13 @@
         <form action="/sessions/<%= session._id %>?_method=DELETE&id=<%= game._id %>" method="post">
             <input type="submit" value="Remove Session">
         </form>
+        <% } %>
         <% if (!session.playersIds.some(obj => obj.googleId === user.googleId)) { %>
             <form action="/sessions/<%= session._id %>/join?_method=PUT&id=<%= game._id %>" method="post">
             <input type="submit" value="Join Session">
         </form>
         <%} %>
+        
 <%}})} %>
 <form action="/games/<%= game._id %>/sessions" method="post">
     <input type="text" placeholder="Location" name="location">
