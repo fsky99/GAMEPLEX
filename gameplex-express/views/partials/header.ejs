@@ -4,8 +4,14 @@
     <title><%= title %></title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
 
-    <% { %>
-      <a href="/auth/google" class="login">LOG IN&nbsp;<img src="https://i.imgur.com/FHjYyi0.png"></a>
+    <% if (user) { %>
+    
+      <a href="/games/new" <%- title === 'Add Game'  %>>ADD GAME</a>
+      <a href="/profile">Profile</a>
+
+      <a href="/logout">LOG OUT</a>
+    <% } else { %>
+      <a href="/auth/google" class="login"><img src="https://i.imgur.com/FHjYyi0.png"></a>
     <% } %>
   </head>
   <body>
