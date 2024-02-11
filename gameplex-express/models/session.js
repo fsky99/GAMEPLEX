@@ -3,7 +3,6 @@ const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
 const sessionSchema = new Schema({
-  content : {
   playersIds:  [{ type: Schema.Types.ObjectId ,
     ref: 'User' }],
 location : String ,
@@ -12,7 +11,6 @@ gameId:  { type: Schema.Types.ObjectId ,
   ref: 'Game'},
 max : Number
   },
-},
 {
   timestamps: true
 })

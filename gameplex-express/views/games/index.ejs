@@ -1,0 +1,35 @@
+<%- include('../partials/header') %>
+
+    <h1><%= title %></h1>
+ <h1>All Games</h1>
+
+
+
+<table id="list">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Poster</th>
+
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% games.forEach(function(g) { %>
+        <tr>
+          <td><%= g.name %></td>
+          <td><%= g.type %></td>
+          <td><img src="<%= g.poster %>"></td>
+
+        </tr>
+        <% }); %>
+      </tbody>
+    </table>
+
+
+
+
+
+<%- include('../partials/footer') %>
+
