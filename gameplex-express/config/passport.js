@@ -27,3 +27,14 @@ passport.use(
     }
   )
 )
+
+passport.serializeUser(function (user, cb) {
+  try {
+    if (!user._id) {
+      throw new Error("User object is missing _id property")
+    }
+    cb(null, user._id)
+  } catch (err) {
+    cb(err)
+  }
+})
