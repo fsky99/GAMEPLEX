@@ -2,35 +2,31 @@
 
     <h1><%= title %></h1>
 
-
- <h1>Add a new game</h1>
-
  <form  action="/games/add" method="POST">
-  <label>Game Name:</label>
-<input type="text" name="name">
+
+<div class="form-control">
+  <input class="input input-alt" placeholder="Game Name" required="" type="text" name="name">
+  <span class="input-border input-border-alt"></span>
+</div>
+
 <br><br>
 
-  <label>Genre:</label>
-<input type="text" name="type">
+  <div class="form-control">
+    <input class="input input-alt" placeholder="Genre" required="" type="text" name="type">
+    <span class="input-border input-border-alt"></span>
+  </div>
 <br><br>
 
-
-  <label>add icon:</label>
-
-<input type="text" name="poster">
+  <div class="form-control">
+    <input class="input input-alt" placeholder="Add Icon" required="" type="text" name="poster">
+    <span class="input-border input-border-alt"></span>
+  </div>
 <br><br>
 
-
-<button type="submit" value="Add Game" name="game">Add Game </button>
+<button class="button" type="submit" value="Add Game" name="game"><span class="button-content">Add</span></button>
 
 
  </form>
-
-
-
-
-
-
 
 <%- include('../partials/footer') %>
 

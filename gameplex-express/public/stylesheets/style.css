@@ -1,12 +1,122 @@
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color: #051822;
+  text-align: center;
 }
 
 a {
-  color: #00B7FF;
+  color: #00b7ff;
 }
-img{
+img {
   width: 50px;
   height: 50px;
+}
+
+h1 {
+  color: #1cae89;
+  font-family: "Trebuchet MS";
+}
+
+.input {
+  color: #fff;
+  font-size: 0.9rem;
+  background-color: transparent;
+  width: 50%;
+  box-sizing: border-box;
+  padding-inline: 0.5em;
+  padding-block: 0.7em;
+  border: none;
+  border-bottom: var(--border-height) solid var(--border-before-color);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  font-family: "Trebuchet MS";
+}
+
+.input-border {
+  position: absolute;
+  background: var(--border-after-color);
+  width: 0%;
+  height: 2px;
+  bottom: 0;
+  left: 25%;
+  transition: width 0.3s cubic-bezier(0.6, -0.28, 0.735, 0.045);
+}
+
+/* .input-border {
+  position: absolute;
+  background: linear-gradient(90deg, #25dfba 0%, #1cae89 50%, #1f5459 100%);
+  width: 0%;
+  height: 3px;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: width 0.4s cubic-bezier(0.6, -0.28, 0.735, 0.045);
+} */
+
+.input:focus {
+  outline: none;
+}
+
+.input:focus + .input-border {
+  width: 100%;
+}
+
+.form-control {
+  position: relative;
+  --width-of-input: 300px;
+}
+
+.input-alt {
+  font-size: 1.2rem;
+  padding-inline: 1em;
+  padding-block: 0.8em;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.input-border-alt {
+  height: 3px;
+  background: linear-gradient(90deg, #25dfba 0%, #1cae89 50%, #1f5459 100%);
+  transition: width 0.4s cubic-bezier(0.42, 0, 0.58, 1);
+}
+
+.input-alt:focus + .input-border-alt {
+  width: 50%;
+}
+
+.button {
+  position: relative;
+  overflow: hidden;
+  height: 3.8rem;
+  padding: 0 3rem;
+  border-radius: 0.2rem;
+  background: #031118;
+  background-size: 400%;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  font-family: "Trebuchet MS";
+  font-size: 115%;
+}
+
+.button:hover::before {
+  transform: scaleX(1);
+}
+
+.button-content {
+  position: relative;
+  z-index: 1;
+}
+
+.button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: scaleX(0);
+  transform-origin: 0 50%;
+  width: 100%;
+  height: inherit;
+  border-radius: inherit;
+  background: linear-gradient(82.3deg, #25dfba 10.8%, #1f5459 94.3%);
+  transition: all 0.475s;
 }
