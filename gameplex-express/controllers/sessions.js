@@ -4,12 +4,15 @@ const User = require('../models/user')
 
 const createSession = async (req, res) => {
   try {
+    console.log(req.user)
     const session = new Session({
-      PlayerIds: [req.user._id],
-      loacation: req.body.location,
+      playerIds: [],
+      location: req.body.location,
       date: req.body.date,
-      gameId: req.params.id
+      gameId: req.params.id,
+      max: req.body.max
     })
+    session.playersIds.push(req.user._id)
     await session.save()
     const game = await Game.findById(req.params.id)
     game.sessionIds.push(session._id)
@@ -18,7 +21,7 @@ const createSession = async (req, res) => {
     user.sessionsId.push(session._id)
     await user.save()
 
-    await res.redirect(`/games/${req.params.id}`)
+    res.redirect(`/games/${req.params.id}`)
   } catch (err) {
     console.log(err)
     res.redirect(`/games/${req.params.id}`)

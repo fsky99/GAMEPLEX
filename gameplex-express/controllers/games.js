@@ -14,11 +14,10 @@ async function index(req, res) {
 
 async function show(req, res) {
   const game = await Game.findById(req.params.id).populate('sessionIds')
-  game.sessionIds.forEach(async (session) => {
-    await session.populate('playersIds')
-  })
+  for (let i = 0; i < game.sessionIds.length; i++) {
+    await game.sessionIds[i].populate('playersIds')
+  }
   await game.save()
-
   res.render('games/show', { title: 'Game Detail', game })
 }
 

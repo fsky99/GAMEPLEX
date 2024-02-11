@@ -11,13 +11,15 @@
             <h6>Date: <%= session.date %></h6>
             <h6>Players: <%= session.playersIds.length %>/<%= session.max %></h6>
             <span>
-                <h6>Players</h6>
                 <% session.playersIds.forEach(player => { %>
-                    <%= player.name %>
+                    <label><%= player.name %></label>
                 <% }); %>
             </span>
             <h6><%= session.playersIds.length %>/<%= session.max %></h6>
         </div>
+        <form action="/sessions/<%= session._id %>?_method=DELETE&id=<%= game._id %>" method="post">
+            <input type="submit" value="Remove Session">
+        </form>
 <%})} %>
 <form action="/games/<%= game._id %>/sessions" method="post">
     <input type="text" placeholder="Location" name="location">
