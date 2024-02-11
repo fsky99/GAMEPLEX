@@ -21,9 +21,7 @@ function newGame(req, res) {
   res.render("games/new", { title: "Add Game", errorMsg: "" })
 }
 async function create(req, res) {
-  // let game = new Game(req.body)
   console.log(req.body)
-  // game.save()
   // for (let key in req.body) {
   //   if (req.body[key] === '') delete req.body[key];
   // }
