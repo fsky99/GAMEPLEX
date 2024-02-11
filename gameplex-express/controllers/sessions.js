@@ -25,7 +25,7 @@ const createSession = async (req, res) => {
   }
 }
 
-const addPlayer = async (req, res) => {
+const join = async (req, res) => {
   try {
     const session = await Session.findById(req.params.id)
     session.sessionIds.push(req.user._id)
@@ -41,4 +41,31 @@ const addPlayer = async (req, res) => {
   }
 }
 
-module.exports = { create: createSession, add: addPlayer }
+const leave = async (req, res) => {
+  try {
+    await User.updateOne(
+      { _id: req.user._id },
+      {
+        $pullAll: {
+          sessionsId: req.params.id
+        }
+      }
+    )
+    await User.save()
+    await Session.updateOne(
+      { _id: req.params.id },
+      {
+        $pullAll: {
+          playersIds: req.user._id
+        }
+      }
+    )
+    Session.save()
+    res.redirect(`/games/${req.query.id}`)
+  } catch (error) {
+    console.log(error)
+    res.redirect(`/games/${req.query.id}`)
+  }
+}
+
+module.exports = { create: createSession, join, leave }
