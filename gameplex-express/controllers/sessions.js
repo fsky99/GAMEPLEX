@@ -28,7 +28,7 @@ const createSession = async (req, res) => {
 const join = async (req, res) => {
   try {
     const session = await Session.findById(req.params.id)
-    session.sessionIds.push(req.user._id)
+    session.playersIds.push(req.user._id)
     session.save()
     const user = await User.findById(req.user._id)
     user.sessionsId.push(req.params.id)
