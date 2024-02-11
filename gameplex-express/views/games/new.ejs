@@ -1,0 +1,36 @@
+<%- include('../partials/header') %>
+
+    <h1><%= title %></h1>
+
+
+ <h1>Add a new game</h1>
+
+ <form  action="/games/add" method="POST">
+  <label>Game Name:</label>
+<input type="text" name="name">
+<br><br>
+
+  <label>Genre:</label>
+<input type="text" name="type">
+<br><br>
+
+
+  <label>add icon:</label>
+
+<input type="text" name="poster">
+<br><br>
+
+
+<button type="submit" value="Add Game" name="game">Add Game </button>
+
+
+ </form>
+
+
+
+
+
+
+
+<%- include('../partials/footer') %>
+

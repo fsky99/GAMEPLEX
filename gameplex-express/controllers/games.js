@@ -1,34 +1,38 @@
-const Game = require('../models/game');
+const Game = require("../models/game")
 
 module.exports = {
-  index , 
-  show ,
-  new : newGame,
-  create 
+  index,
+  show,
+  new: newGame,
+  create,
 }
 
-async function index(req,res){
+async function index(req, res) {
   const games = await Game.find({})
-  res.render('games/index' , {title: 'All Gmaes' , games})
+  res.render("games/index", { title: "All Gmaes", games })
 }
 
 async function show(req, res) {
-  const game = await Game.findById(req.params.id).populate('sessionId')
-  res.render('games/show', { title: 'Game Detail', game });
+  const game = await Game.findById(req.params.id).populate("sessionId")
+  res.render("games/show", { title: "Game Detail", game })
 }
 
 function newGame(req, res) {
-  res.render('games/new', { title: 'Add Game', errorMsg: '' });
+  res.render("games/new", { title: "Add Game", errorMsg: "" })
 }
 async function create(req, res) {
-  for (let key in req.body) {
-    if (req.body[key] === '') delete req.body[key];
-  }
+  // let game = new Game(req.body)
+  console.log(req.body)
+  // game.save()
+  // for (let key in req.body) {
+  //   if (req.body[key] === '') delete req.body[key];
+  // }
   try {
-    await Game.create(req.body);
-    res.redirect('/games');  
+    // req.body.sessionIds = []
+    await Game.create(req.body)
+    res.redirect("/games")
   } catch (err) {
-    console.log(err);
-    res.render('games/new', { errorMsg: err.message });
+    console.log("This is the error!!!" + err)
+    res.render("games/new", { errorMsg: err.message })
   }
 }

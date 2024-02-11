@@ -1,0 +1,27 @@
+<%- include('../partials/header') %>
+
+    <h1><%= title %></h1>
+ <h1>All Games</h1>
+
+
+
+    <% games.forEach(function(g){ %>
+
+        <h3><% g.name %></h3>
+        <h3><% g.type %></h3>
+        <h3><% g.poster %></h3>
+
+
+
+    <% }) %>
+
+
+
+
+
+
+
+
+
+<%- include('../partials/footer') %>
+
