@@ -1,5 +1,6 @@
 const Session = require('../models/session')
 const Game = require('../models/game')
+const User = require('../models/user')
 
 const createSession = async (req, res) => {
   try {
@@ -18,6 +19,22 @@ const createSession = async (req, res) => {
   } catch (err) {
     console.log(err)
     res.redirect(`/games/${req.params.id}`)
+  }
+}
+
+const addPlayer = async (req, res) => {
+  try {
+    const session = await Session.findById(req.params.id)
+    session.sessionIds.push(req.user._id)
+    session.save()
+    const user = await User.findById(req.user._id)
+    user.sessionsId.push(req.params.id)
+    await user.save()
+
+    res.redirect(`/games/${req.query.id}`)
+  } catch (error) {
+    console.log(error)
+    res.redirect(`/games/${req.query.id}`)
   }
 }
 
