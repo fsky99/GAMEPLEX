@@ -5,19 +5,25 @@
 
 
 
-    <% games.forEach(function(g){ %>
+<table id="list">
+    <thead>
+      <tr>
+        <th>Title</th>
+        
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% games.forEach(function(g) { %>
+        <tr>
+          <td><%= g.name %></td>
+          <td><%= g.type %></td>
+          <td><%= g.poster %></td>
 
-        <h3><% g.name %></h3>
-        <h3><% g.type %></h3>
-        <h3><% g.poster %></h3>
-
-
-
-    <% }) %>
-
-
-
-
+        </tr>
+        <% }); %>
+      </tbody>
+    </table>
 
 
 
