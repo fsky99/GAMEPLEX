@@ -1,7 +1,24 @@
 <%- include('../partials/header') %>
 
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
+<h1><%= game.name %></h1>
+<img src="<%= game.poster %>" alt="<%= game.name %>">
+<h5>Type: <%= game.type %></h5>
+
+<% if (game.sessionIds.length){ %>
+    <% game.sessionIds.forEach(session => { %>
+        <div>
+            <h6>Location: <%= session.location %></h6>
+            <h6>Date: <%= session.date %></h6>
+            <h6>Players: <%= session.playersIds.length %>/<%= session.max %></h6>
+            <span>
+                <h6>Players</h6>
+                <% sessions.playersIds.forEach(player => { %>
+                    <%= player.name %>
+                <% }); %>
+            </span>
+            <h6><%= session.playersIds.length %>/<%= session.max %></h6>
+        </div>
+<%})} %>
 
 <%- include('../partials/footer') %>
 

@@ -18,7 +18,7 @@
     <tbody>
       <% games.forEach(function(g) { %>
         <tr>
-          <td><%= g.name %></td>
+          <td><a href="/games/<%= g._id %>"><%= g.name %></a></td>
           <td><%= g.type %></td>
           <td><img src="<%= g.poster %>"></td>
 
