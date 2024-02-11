@@ -50,20 +50,18 @@ const leave = async (req, res) => {
       { _id: req.user._id },
       {
         $pullAll: {
-          sessionsId: req.params.id
+          sessionsId: [req.params.id]
         }
       }
     )
-    await User.save()
     await Session.updateOne(
       { _id: req.params.id },
       {
         $pullAll: {
-          playersIds: req.user._id
+          playersIds: [req.user._id]
         }
       }
     )
-    Session.save()
     res.redirect(`/games/${req.query.id}`)
   } catch (error) {
     console.log(error)
