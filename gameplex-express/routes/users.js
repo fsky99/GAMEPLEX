@@ -1,14 +1,10 @@
-var express = require("express")
+var express = require('express')
 var router = express.Router()
+const usersCtrl = require('../controllers/users')
 
 /* GET users listing. */
 // router.get("/", function (req, res, next) {
 //   res.send("Salman")
 // })
-router.get("/", function (req, res, next) {
-  // res.render("games/profile", { title: "Profile " },user)});
-  let user = req.user
-  console.log("This is the user!!!!! " + user)
-  res.render("games/profile",{ title: "Profile" ,user})
-})
+router.get('/', usersCtrl.show)
 module.exports = router
