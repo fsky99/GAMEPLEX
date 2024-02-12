@@ -6,9 +6,10 @@
     }
   </script>
   <head>
+    <nav>
     <title><%= title %></title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
-    <nav>
+    
     <% if (user) { %>
       <a class="navBarClass" href="/games" <%- title === 'All Games'  %>>ALL GAME</a>
       <a class="navBarClass" href="/games/new" <%- title === 'Add Game'  %>>ADD GAME</a>

@@ -32,6 +32,9 @@ body {
   background-color: #051822;
   color: aliceblue;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 #cardsGamesDIv {
   display: flex;
@@ -339,6 +342,11 @@ li {
 }
 #githubButtonsDiv {
   display: flex;
+  position: fixed;
+  left: 30px;
+  bottom: 20px;
+  width: 100%;
+  text-align: center;
 }
 
 .signin {
@@ -373,4 +381,9 @@ li {
 button svg {
   height: 24px;
   width: auto;
+}
+
+.profileImg {
+  width: 20px;
+  height: 20px;
 }
