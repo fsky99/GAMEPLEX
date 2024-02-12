@@ -5,14 +5,15 @@
 
 <div  class="cards-grid">
   <% games.forEach(function(g) { %>
-
-  <div class="card">
+    <a href='/games/<%= g._id %>'>
+    <div class="card">
     <img src="<%= g.poster %>" alt="Card Image">
     <div class="card__content">
       <p class="card__title"><%= g.name %></p>
       <p class="card__description"><%= g.type %></p>
     </div>
   </div>
+</a>
 
 
   <% }); %>
