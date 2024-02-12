@@ -1,6 +1,6 @@
 body {
   padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font: 14px 'Lucida Grande', Helvetica, Arial, sans-serif;
   background-color: #051822;
   text-align: center;
 }
@@ -16,6 +16,7 @@ body {
 a {
   color: #00b7ff;
 }
+
 /* img {
   width: 100%;
   height: auto;
@@ -24,7 +25,7 @@ a {
 /* } */
 */ h1 {
   color: #1cae89;
-  font-family: "Trebuchet MS";
+  font-family: 'Trebuchet MS';
 }
 
 /* input css  */
@@ -39,7 +40,7 @@ a {
   border: none;
   border-bottom: var(--border-height) solid var(--border-before-color);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  font-family: "Trebuchet MS";
+  font-family: 'Trebuchet MS';
 }
 
 .input-border {
@@ -105,7 +106,7 @@ a {
   color: #fff;
   border: none;
   cursor: pointer;
-  font-family: "Trebuchet MS";
+  font-family: 'Trebuchet MS';
   font-size: 115%;
 }
 
@@ -119,7 +120,7 @@ a {
 }
 
 .button::before {
-  content: "";
+  content: '';
   position: absolute;
   top: 0;
   left: 0;
