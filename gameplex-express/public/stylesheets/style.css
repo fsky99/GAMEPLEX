@@ -3,7 +3,7 @@
   src: url("../Fonts/gameria/GAMERIA.ttf") format("ttf");
 }
 
-.fontTitle {
+.gameName {
   font-family: "gameria", sans-serif;
   font-size: 60px;
   color: #fff;
@@ -15,10 +15,14 @@
 
 @keyframes neon-animation {
   0% {
-    text-shadow: 0 0 10px #b4c5c0, 0 0 20px #b4c5c0, 0 0 30px #b4c5c0, 0 0 40px #1cae89, 0 0 70px #1cae89, 0 0 80px #1cae89, 0 0 100px #1cae89, 0 0 150px #1cae89;
+    text-shadow: 0 0 10px #b4c5c0, 0 0 20px #b4c5c0, 0 0 30px #b4c5c0,
+      0 0 40px #1cae89, 0 0 70px #1cae89, 0 0 80px #1cae89, 0 0 100px #1cae89,
+      0 0 150px #1cae89;
   }
   100% {
-    text-shadow: 0 0 5px #b4c5c0, 0 0 10px #b4c5c0, 0 0 15px #b4c5c0, 0 0 20px #1cae89, 0 0 35px #1cae89, 0 0 40px #1cae89, 0 0 50px #1cae89, 0 0 75px #1cae89;
+    text-shadow: 0 0 5px #b4c5c0, 0 0 10px #b4c5c0, 0 0 15px #b4c5c0,
+      0 0 20px #1cae89, 0 0 35px #1cae89, 0 0 40px #1cae89, 0 0 50px #1cae89,
+      0 0 75px #1cae89;
   }
 }
 
@@ -335,4 +339,38 @@ li {
 }
 #githubButtonsDiv {
   display: flex;
+}
+
+.signin {
+  float: right;
+  max-width: 320px;
+  display: flex;
+  padding: 0.5rem 1.4rem;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  font-weight: 700;
+  text-align: center;
+  font-family: "Montserrat", sans-serif;
+  vertical-align: middle;
+  align-items: center;
+  border-radius: 0.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  gap: 0.75rem;
+  color: #c4d2dc;
+  background-color: #19242b;
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0, 0.87, 0.12, 1);
+}
+
+.signin:hover {
+  transform: scale(1.025);
+}
+
+.signin:active {
+  transform: scale(0.975);
+}
+
+button svg {
+  height: 24px;
+  width: auto;
 }
