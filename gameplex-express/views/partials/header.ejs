@@ -7,13 +7,14 @@
     <% if (user) { %>
 
      
+      <a class="navBarClass" href="/games" <%- title === 'All Games'  %>>ALL GAME</a>
+     
+      <a class="navBarClass" href="/games/new" <%- title === 'Add Game'  %>>ADD GAME</a>
+      <a class="navBarClass" href="/profile">PROFILE</a>
 
-      <a href="/games/new" <%- title === 'Add Game'  %>>ADD GAME</a>
-      <a href="/profile">PROFILE</a>
-
-      <a href="/logout">LOG OUT</a>
+      <a class="navBarClass" href="/logout">LOG OUT</a>
     <% } else { %>
-      <a href="/auth/google" class="login"><img src="https://i.imgur.com/FHjYyi0.png" id="googlepic"></a>
+      <a class="navBarClass" href="/auth/google" class="login"><img src="https://i.imgur.com/FHjYyi0.png" id="googlepic"></a>
     <% } %>
   </head>
   <body>

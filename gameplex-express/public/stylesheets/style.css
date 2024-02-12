@@ -213,30 +213,30 @@ a {
 }
 
 /* nav bar css  */
-ul { 
-  margin: 150px auto 0; 
-  padding: 0; 
-  list-style: none; 
+ul {
+  margin: 150px auto 0;
+  padding: 0;
+  list-style: none;
   display: table;
   width: 600px;
   text-align: center;
 }
-li { 
-  display: table-cell; 
-  position: relative; 
+li {
+  display: table-cell;
+  position: relative;
   padding: 15px 0;
 }
-a {
+.navBarClass {
   color: #fff;
   text-transform: uppercase;
   text-decoration: none;
   letter-spacing: 0.15em;
-  
+  margin-bottom: 20px;
   display: inline-block;
   padding: 15px 20px;
   position: relative;
 }
-a:after {    
+.navBarClass:after {
   background: none repeat scroll 0 0 transparent;
   bottom: 0;
   content: "";
@@ -244,16 +244,16 @@ a:after {
   height: 2px;
   left: 50%;
   position: absolute;
-  background: linear-gradient(90deg, #25dfba 0%, #1cae89 50%, #1f5459 100%);;
+  background: linear-gradient(90deg, #25dfba 0%, #1cae89 50%, #1f5459 100%);
   transition: width 0.3s ease 0s, left 0.3s ease 0s;
   width: 0;
 }
-a:hover:after { 
-  width: 100%; 
-  left: 0; 
+.navBarClass:hover:after {
+  width: 100%;
+  left: 0;
 }
 @media screen and (max-height: 300px) {
-	ul {
-		margin-top: 40px;
-	}
+  ul {
+    margin-top: 40px;
+  }
 }
