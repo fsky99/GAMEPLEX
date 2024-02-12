@@ -1,10 +1,27 @@
 @font-face {
-  font-family: "cubex";
-  src: url("../cubex/Cubex.woff") format("woff");
+  font-family: "gameria";
+  src: url("../Fonts/gameria/GAMERIA.ttf") format("ttf");
 }
+
 .fontTitle {
-  font-family: "cubex", sans-serif;
+  font-family: "gameria", sans-serif;
+  font-size: 60px;
+  color: #fff;
+  text-align: center;
+  text-transform: uppercase;
+  position: relative;
+  animation: neon-animation 1.5s ease-in-out infinite alternate;
 }
+
+@keyframes neon-animation {
+  0% {
+    text-shadow: 0 0 10px #b4c5c0, 0 0 20px #b4c5c0, 0 0 30px #b4c5c0, 0 0 40px #1cae89, 0 0 70px #1cae89, 0 0 80px #1cae89, 0 0 100px #1cae89, 0 0 150px #1cae89;
+  }
+  100% {
+    text-shadow: 0 0 5px #b4c5c0, 0 0 10px #b4c5c0, 0 0 15px #b4c5c0, 0 0 20px #1cae89, 0 0 35px #1cae89, 0 0 40px #1cae89, 0 0 50px #1cae89, 0 0 75px #1cae89;
+  }
+}
+
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
