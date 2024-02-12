@@ -1,8 +1,13 @@
+@import url('https://fonts.fontesk.com/css?family=Cubex');
+
+
 body {
   padding: 50px;
-  font: 14px 'Lucida Grande', Helvetica, Arial, sans-serif;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   background-color: #051822;
   text-align: center;
+  font-family: 'Cubex', sans-serif;
+
 }
 #cardsGamesDIv {
   display: flex;
@@ -25,7 +30,7 @@ a {
 /* } */
 */ h1 {
   color: #1cae89;
-  font-family: 'Trebuchet MS';
+  font-family: "Trebuchet MS";
 }
 
 /* input css  */
@@ -40,7 +45,7 @@ a {
   border: none;
   border-bottom: var(--border-height) solid var(--border-before-color);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  font-family: 'Trebuchet MS';
+  font-family: "Trebuchet MS";
 }
 
 .input-border {
@@ -106,7 +111,7 @@ a {
   color: #fff;
   border: none;
   cursor: pointer;
-  font-family: 'Trebuchet MS';
+  font-family: "Trebuchet MS";
   font-size: 115%;
 }
 
@@ -120,7 +125,7 @@ a {
 }
 
 .button::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
@@ -268,7 +273,7 @@ li {
   display: flex;
   align-items: center;
   justify-content: center;
-  transition-duration: .4s;
+  transition-duration: 0.4s;
   cursor: pointer;
   position: relative;
   background-color: rgb(31, 31, 31);
@@ -277,7 +282,7 @@ li {
 }
 
 .svgIcon {
-  transition-duration: .3s;
+  transition-duration: 0.3s;
 }
 
 .svgIcon path {
@@ -290,24 +295,24 @@ li {
   width: 120px;
   font-weight: 600;
   opacity: 0;
-  transition-duration: .4s;
+  transition-duration: 0.4s;
 }
 
 .BtnGH:hover {
   width: 110px;
-  transition-duration: .4s;
+  transition-duration: 0.4s;
   border-radius: 30px;
 }
 
 .BtnGH:hover .text {
   opacity: 1;
-  transition-duration: .4s;
+  transition-duration: 0.4s;
 }
 
 .BtnGH:hover .svgIcon {
   opacity: 0;
-  transition-duration: .3s;
+  transition-duration: 0.3s;
 }
-#githubButtonsDiv{
+#githubButtonsDiv {
   display: flex;
 }
