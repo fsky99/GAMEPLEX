@@ -1,13 +1,16 @@
-@import url('https://fonts.fontesk.com/css?family=Cubex');
-
-
+@font-face {
+  font-family: "cubex";
+  src: url("../cubex/Cubex.woff") format("woff");
+}
+.fontTitle {
+  font-family: "cubex", sans-serif;
+}
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   background-color: #051822;
+  color: aliceblue;
   text-align: center;
-  font-family: 'Cubex', sans-serif;
-
 }
 #cardsGamesDIv {
   display: flex;
