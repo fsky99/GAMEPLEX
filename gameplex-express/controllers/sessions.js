@@ -4,12 +4,15 @@ const User = require('../models/user')
 
 const createSession = async (req, res) => {
   try {
+    console.log(req.user)
     const session = new Session({
-      PlayerIds: [req.user._id],
-      loacation: req.body.location,
+      playerIds: [],
+      location: req.body.location,
       date: req.body.date,
-      gameId: req.params.id
+      gameId: req.params.id,
+      max: req.body.max
     })
+    session.playersIds.push(req.user._id)
     await session.save()
     const game = await Game.findById(req.params.id)
     game.sessionIds.push(session._id)
@@ -18,7 +21,7 @@ const createSession = async (req, res) => {
     user.sessionsId.push(session._id)
     await user.save()
 
-    await res.redirect(`/games/${req.params.id}`)
+    res.redirect(`/games/${req.params.id}`)
   } catch (err) {
     console.log(err)
     res.redirect(`/games/${req.params.id}`)
@@ -47,20 +50,18 @@ const leave = async (req, res) => {
       { _id: req.user._id },
       {
         $pullAll: {
-          sessionsId: req.params.id
+          sessionsId: [req.params.id]
         }
       }
     )
-    await User.save()
     await Session.updateOne(
       { _id: req.params.id },
       {
         $pullAll: {
-          playersIds: req.user._id
+          playersIds: [req.user._id]
         }
       }
     )
-    Session.save()
     res.redirect(`/games/${req.query.id}`)
   } catch (error) {
     console.log(error)
@@ -70,27 +71,26 @@ const leave = async (req, res) => {
 
 const removeSession = async (req, res) => {
   try {
-    const session = Session.findById(req.params.id)
-    session.playersIds.forEach(async (id) => {
+    const session = await Session.findById(req.params.id)
+    console.log(req.params.id)
+    for (let i = 0; i < session.playersIds.length; i++) {
       await User.updateOne(
-        { _id: id },
+        { _id: session.playersIds[i] },
         {
           $pullAll: {
-            sessionsId: req.params.id
+            sessionsId: [req.params.id]
           }
         }
       )
-      await User.save()
-    })
+    }
     await Game.updateOne(
       { _id: req.query.id },
       {
         $pullAll: {
-          sessionIds: req.params.id
+          sessionIds: [req.params.id]
         }
       }
     )
-    await Game.save()
     await Session.deleteOne({ _id: req.params.id })
     await Session.save()
 
