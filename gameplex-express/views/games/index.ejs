@@ -3,31 +3,21 @@
     <h1><%= title %></h1>
 
 
+<div  class="cards-grid">
+  <% games.forEach(function(g) { %>
 
-<table id="list">
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Type</th>
-        <th>Poster</th>
+  <div class="card">
+    <img src="<%= g.poster %>" alt="Card Image">
+    <div class="card__content">
+      <p class="card__title"><%= g.name %></p>
+      <p class="card__description"><%= g.type %></p>
+    </div>
+  </div>
 
-        <th></th>
-      </tr>
-    </thead>
-    <tbody>
-      <% games.forEach(function(g) { %>
-        <tr>
-          <td><%= g.name %></td>
-          <td><%= g.type %></td>
-          <td><img src="<%= g.poster %>"></td>
-
-        </tr>
-        <% }); %>
-      </tbody>
-    </table>
+  <% }); %>
 
 
-
+</div>
 
 
 <%- include('../partials/footer') %>
