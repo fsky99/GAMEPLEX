@@ -18,11 +18,12 @@
             <h6><%= session.playersIds.length %>/<%= session.max %></h6>
         </div>
         <%if (user){ 
+            if (session.playersIds.length > 0){
         if (user.googleId === session.playersIds[0].googleId) {%>
         <form action="/sessions/<%= session._id %>?_method=DELETE&id=<%= game._id %>" method="post">
             <input type="submit" value="Remove Session">
         </form>
-        <% } %>
+        <% } }%>
         <% if (!session.playersIds.some(obj => obj.googleId === user.googleId)) { %>
             <form action="/sessions/<%= session._id %>/join?_method=PUT&id=<%= game._id %>" method="post">
             <input type="submit" value="Join Session">
