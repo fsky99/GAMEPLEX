@@ -101,4 +101,23 @@ const removeSession = async (req, res) => {
   }
 }
 
-module.exports = { create: createSession, remove: removeSession, join, leave }
+const createComment = async (req, res) => {
+  try {
+    const session = await Session.findById(req.params.id)
+    req.body.name = req.user.name
+    session.comments.push(req.body)
+    await session.save()
+    res.redirect(`/games/${req.query.id}`)
+  } catch (error) {
+    console.log(error)
+    res.redirect(`/games/${req.query.id}`)
+  }
+}
+
+module.exports = {
+  create: createSession,
+  remove: removeSession,
+  join,
+  leave,
+  createComment
+}
