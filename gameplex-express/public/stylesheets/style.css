@@ -4,8 +4,10 @@
 }
 
 .gameName {
+  padding-top: 90px;
+  padding-bottom: 50px;
   font-family: "gameria", sans-serif;
-  font-size: 60px;
+  font-size: 80px;
   color: #fff;
   text-align: center;
   text-transform: uppercase;
@@ -24,6 +26,11 @@
       0 0 20px #1cae89, 0 0 35px #1cae89, 0 0 40px #1cae89, 0 0 50px #1cae89,
       0 0 75px #1cae89;
   }
+}
+
+h3 {
+  font-size: 150%;
+  padding-bottom: 50px;
 }
 
 body {
@@ -125,6 +132,58 @@ a {
 .input-alt:focus + .input-border-alt {
   width: 50%;
 }
+/* .input2 {
+  color: #fff;
+  font-size: 0.9rem;
+  background-color: transparent;
+  width: 100%;
+  box-sizing: border-box;
+  padding-inline: 0.5em;
+  padding-block: 0.7em;
+  border: none;
+  border-bottom: var(--border-height) solid var(--border-before-color);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  font-family: "Trebuchet MS";
+}
+.input-border2 {
+  position: absolute;
+  background: var(--border-after-color);
+  width: 0%;
+  height: 2px;
+  bottom: 0;
+  left: 25%;
+  transition: width 0.3s cubic-bezier(0.6, -0.28, 0.735, 0.045);
+}
+
+.input2:focus {
+  outline: none;
+}
+
+.input2:focus + .input-border2 {
+  width: 100%;
+}
+
+.form-control2 {
+  position: relative;
+  --width-of-input: 300px;
+}
+
+.input-alt2 {
+  font-size: 1.2rem;
+  padding-inline: 1em;
+  padding-block: 0.8em;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.input-border-alt2 {
+  height: 3px;
+  background: linear-gradient(90deg, #25dfba 0%, #1cae89 50%, #1f5459 100%);
+  transition: width 0.4s cubic-bezier(0.42, 0, 0.58, 1);
+}
+
+.input-alt2:focus + .input-border-alt2 {
+  width: 100%;
+} */
 
 /* button css for the add new game  */
 .button {
@@ -383,24 +442,24 @@ button svg {
   width: auto;
 }
 
-.profileImg {
+.gameImg {
   width: 20px;
   height: 20px;
 }
 
-#profilepic {
+#profileImg {
   border: 1px solid #ddd;
   border-radius: 4px;
   padding: 5px;
   width: 110px;
 }
-/* 
+
 .profileDetails {
   display: flex;
-  width: 90vw;
-} */
+}
 
 .profileDetsCon {
-display: flex;
-flex-direction: column;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
 }
