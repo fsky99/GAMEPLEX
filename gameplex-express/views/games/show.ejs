@@ -35,10 +35,14 @@
         </form>
         <%} %>
         <% if (session.playersIds.some(obj => obj.googleId === user.googleId)) { 
-            session.comments.forEach(comment => { %>
+            session.comments.forEach((comment,i) => { %>
                 <label><%= comment.name %></label>
                 <p><%= comment.content %></p>
-            <% })%>
+                <% if ( user.name === comment.name) { %>
+                    <form action="/sessions/<%= session._id %>/comments?_method=DELETE&id=<%= game._id %>&index=<%= i %>" method="post">
+                <input type="submit" value="Delete Comment">
+            </form>
+            <%} })%>
             <form action="/sessions/<%= session._id %>/comments?_method=PUT&id=<%= game._id %>" method="post">
                 <input type="text" placeholder="Comment" name="content">
                 <input type="submit" value="comment">
