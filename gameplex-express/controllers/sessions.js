@@ -107,8 +107,11 @@ const createComment = async (req, res) => {
     req.body.name = req.user.name
     session.comments.push(req.body)
     await session.save()
-    res.redirect()
-  } catch (error) {}
+    res.redirect(`/games/${req.query.id}`)
+  } catch (error) {
+    console.log(error)
+    res.redirect(`/games/${req.query.id}`)
+  }
 }
 
 module.exports = {
