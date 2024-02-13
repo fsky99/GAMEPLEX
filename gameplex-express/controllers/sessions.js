@@ -101,4 +101,12 @@ const removeSession = async (req, res) => {
   }
 }
 
-module.exports = { create: createSession, remove: removeSession, join, leave }
+const createComment = async (req, res) => {}
+
+module.exports = {
+  create: createSession,
+  remove: removeSession,
+  join,
+  leave,
+  createComment
+}
