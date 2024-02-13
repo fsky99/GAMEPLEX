@@ -101,7 +101,15 @@ const removeSession = async (req, res) => {
   }
 }
 
-const createComment = async (req, res) => {}
+const createComment = async (req, res) => {
+  try {
+    const session = await Session.findById(req.params.id)
+    req.body.name = req.user.name
+    session.comments.push(req.body)
+    await session.save()
+    res.redirect()
+  } catch (error) {}
+}
 
 module.exports = {
   create: createSession,
