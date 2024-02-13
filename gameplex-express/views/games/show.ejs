@@ -24,7 +24,7 @@
             <input type="submit" value="Remove Session">
         </form>
         <% } }%>
-        <% if (!session.playersIds.some(obj => obj.googleId === user.googleId)) { %>
+        <% if (!session.playersIds.some(obj => obj.googleId === user.googleId) && session.playersIds.length < session.max) { %>
             <form action="/sessions/<%= session._id %>/join?_method=PUT&id=<%= game._id %>" method="post">
             <input type="submit" value="Join Session">
         </form>
@@ -34,14 +34,27 @@
             <input type="submit" value="Leave Session">
         </form>
         <%} %>
-        
+        <% if (session.playersIds.some(obj => obj.googleId === user.googleId)) { 
+            session.comments.forEach(comment => { %>
+                <label><%= comment.name %></label>
+                <p><%= comment.content %></p>
+            <% })%>
+            <form action="/sessions/<%= session._id %>/comments?_method=PUT&id=<%= game._id %>" method="post">
+                <input type="text" placeholder="Comment" name="content">
+                <input type="submit" value="comment">
+            </form>
+        <% } %>
 <%}})} %>
+
+
+
+<% if(user){ %>
 <form action="/games/<%= game._id %>/sessions" method="post">
     <input type="text" placeholder="Location" name="location">
     <input type="date" placeholder="Date" name="date">
     <input type="number" placeholder="Max Players" name="max">
     <input type="submit" value="Create Session">
 </form>
-
+<% } %>
 <%- include('../partials/footer') %>
 
