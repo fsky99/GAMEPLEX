@@ -443,8 +443,11 @@ button svg {
 }
 
 .gameImg {
-  width: 20px;
-  height: 20px;
+  width:350px;
+  height: 360px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 #profileImg {
