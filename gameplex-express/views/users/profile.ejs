@@ -1,27 +1,43 @@
 <%- include('../partials/header') %>
 
-  <h1> PROFFFFFFFFFFILE</h1>
-  <img src="<%= user.avatar%>"> 
+  <h1> PROFILE</h1>
+  <div class="profileDetsCon">
+    <div>
+  <img src="<%= user.avatar%>" id="profilepic"> 
   <br><br>
-  Name: <%= user.name%>
-  <br><br>
-  Email : <%= user.email%>
+  <section class="profileDetails">
 
-  <div>
-    <% if (user.sessionsId.length){ %>
-      <% user.sessionsId.forEach(session => { %>
-          <div>
-              <h6>Location: <%= session.location %></h6>
-              <h6>Date: <%= session.date %></h6>
-              <h6>Players: <%= session.playersIds.length %>/<%= session.max %></h6>
-              <span>
-                  <% session.playersIds.forEach(player => { %>
-                      <label><%= player.name %></label>
-                  <% }); %>
-              </span>
-              <h6><%= session.playersIds.length %>/<%= session.max %></h6>
-          </div>
+  <form action="/users/<%= user._id %>?_method=PUT" method="post">
+  <br><br>
+  
+  <div class="form-control">
+    <input class="input input-alt" placeholder=<%= user.name%> required="" type="text" name="name">
+    <span class="input-border input-border-alt"></span>
   </div>
-  <% })} %>
-<%- include('../partials/footer') %>
 
+  <div class="form-control">
+    <input class="input input-alt" placeholder=<%= user.email%> required="" type="text" name="name">
+    <span class="input-border input-border-alt"></span>
+  </div>
+</section>
+</form>
+</div>
+<div>
+  <% if (user.sessionsId.length){ %>
+    <% user.sessionsId.forEach(session => { %>
+      <div>
+        <h6>Location: <%= session.location %></h6>
+        <h6>Date: <%= session.date %></h6>
+        <h6>Players: <%= session.playersIds.length %>/<%= session.max %></h6>
+        <span>
+          <% session.playersIds.forEach(player => { %>
+            <label><%= player.name %></label>
+            <% }); %>
+          </span>
+          <h6><%= session.playersIds.length %>/<%= session.max %></h6>
+        </div>
+      </div>
+      <% })} %>
+    </div>
+      <%- include('../partials/footer') %>
+      

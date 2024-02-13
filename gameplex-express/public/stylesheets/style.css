@@ -387,3 +387,20 @@ button svg {
   width: 20px;
   height: 20px;
 }
+
+#profilepic {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 5px;
+  width: 110px;
+}
+/* 
+.profileDetails {
+  display: flex;
+  width: 90vw;
+} */
+
+.profileDetsCon {
+display: flex;
+flex-direction: column;
+}
