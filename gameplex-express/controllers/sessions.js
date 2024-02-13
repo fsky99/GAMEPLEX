@@ -114,10 +114,23 @@ const createComment = async (req, res) => {
   }
 }
 
+const deleteComment = async (req, res) => {
+  try {
+    const session = await Session.findById(req.params.id)
+    session.comments.splice(req.query.index, 1)
+    session.save()
+    res.redirect(`/games/${req.query.id}`)
+  } catch (error) {
+    console.log(error)
+    res.redirect(`/games/${req.query.id}`)
+  }
+}
+
 module.exports = {
   create: createSession,
   remove: removeSession,
   join,
   leave,
-  createComment
+  createComment,
+  deleteComment
 }
