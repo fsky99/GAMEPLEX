@@ -32,7 +32,6 @@ h3 {
   padding-bottom: 70px;
 }
 
-
 #exploreBtn {
   padding: 0.8em 2em 0.8em 2.5em;
   font-size: 15px;
@@ -483,4 +482,53 @@ button svg {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+}
+
+.profileCard {
+  width: 310px;
+  height: 380px;
+  background: #1f5459;
+  border-radius: 12px;
+  box-shadow: 0px 0px 30px #1f545956;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  transition-duration: 0.5s;
+}
+
+.profileImage {
+  background: linear-gradient(to right, #1f5459, #1f5459);
+  margin-top: 38px;
+  width: 170px;
+  height: 170px;
+  border-radius: 50%;
+  box-shadow: 5px 10px 20px rgba(0, 0, 0, 0.329);
+}
+
+.textContainer {
+  width: 100%;
+  text-align: center;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  /* gap: 8px; */
+}
+
+.name {
+  font-size: 120%;
+  font-weight: 600;
+  color: white;
+  letter-spacing: 0.5px;
+}
+
+.profile {
+  font-size: 100%;
+  color: rgb(194, 194, 194);
+  letter-spacing: 0.2px;
+}
+
+.profileCard:hover {
+  background-color: #2b818a;
+  transition-duration: 0.5s;
 }
