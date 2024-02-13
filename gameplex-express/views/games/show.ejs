@@ -1,7 +1,7 @@
 <%- include('../partials/header') %>
 
-<h1><%= game.name %></h1>
-<img src="<%= game.poster %>" alt="<%= game.name %>">
+<h1 class="fontTitle"><%= game.name %></h1>
+<img src="<%= game.poster %>" alt="<%= game.name %>" class="profileImg">
 <h5>Type: <%= game.type %></h5>
 
 <% if (game.sessionIds.length){ %>
