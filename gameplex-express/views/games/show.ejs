@@ -2,10 +2,36 @@
 
 <h1 class="fontTitle"><%= game.name %></h1>
 <img src="<%= game.poster %>" alt="<%= game.name %>" class="gameImg">
-<h5>Type: <%= game.type %></h5>
+<p>Description: <%= game.type %></p>
+<% if(user){ %>
+    <form action="/games/<%= game._id %>/sessions" method="post">
+        <div class="Session-form-container">
 
+    <div class="form__group field">
+        <input type="text" class="form__field" placeholder="Name" required="" name="location">
+        <label for="name" class="form__label">Location</label>
+    </div>
+
+    <div class="form__group field">
+        <input type="date" class="form__field"  required="" name="date">
+        <label for="name" class="form__label"></label>
+    </div>
+    <div class="form__group field">
+        <input type="number" class="form__field" placeholder="Max Players" required="" name="max">
+        <label for="name" class="form__label">Max Players</label>
+    </div>
+    <button value="Create Session" type="submit" class="CSButtton">  
+        <p>Create</p>
+       
+      </button>
+      
+   
+    </div>
+    </form>
+    <% } %>
 <% if (game.sessionIds.length){ %>
     <% game.sessionIds.forEach(session => { %>
+        
         <div>
             <h6>Location: <%= session.location %></h6>
             <h6>Date: <%= session.date %></h6>
@@ -52,13 +78,6 @@
 
 
 
-<% if(user){ %>
-<form action="/games/<%= game._id %>/sessions" method="post">
-    <input type="text" placeholder="Location" name="location">
-    <input type="date" placeholder="Date" name="date">
-    <input type="number" placeholder="Max Players" name="max">
-    <input type="submit" value="Create Session">
-</form>
-<% } %>
+
 <%- include('../partials/footer') %>
 

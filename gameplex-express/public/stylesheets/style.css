@@ -463,8 +463,11 @@ button svg {
 }
 
 .gameImg {
-  width: 20px;
-  height: 20px;
+  width:350px;
+  height: 360px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 #profileImg {
@@ -481,7 +484,150 @@ button svg {
 .profileDetsCon {
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-around;}
+
+/* css for the session input  */
+.form__group {
+  position: relative;
+  padding: 10px 0; 
+  width: 100%;
+  max-width: 180px;
+  margin: 0 10px;
+  display: inline-block; 
+
+}
+
+.form__field {
+  width: 100%;
+  border: none;
+  border-bottom: 2px solid #1F5459;
+  outline: 0;
+  font-size: 17px;
+  color: #fff;
+  padding: 10px 0;
+    background: transparent;
+  transition: border-color 0.2s;
+}
+
+.form__field::placeholder {
+  color: transparent;
+}
+
+.form__field:placeholder-shown ~ .form__label {
+  font-size: 17px;
+  cursor: text;
+  top: 20px;
+}
+
+.form__label {
+  position: absolute;
+  top: 0px;
+  display: block;
+  transition: 0.2s;
+  font-size: 17px;
+  color: #1F5459;
+  pointer-events: none;
+}
+
+.form__field:focus {
+  padding-bottom: 6px;
+  font-weight: 700;
+  border-width: 3px;
+  border-image: linear-gradient(to left, #1F5459, #25DFBA);
+  border-image-slice: 1;
+}
+
+.form__field:focus ~ .form__label {
+  position: absolute;
+  top: 10px; 
+  font-size: 14px; 
+  display: block;
+  transition: 0.2s;
+  color: #25DFBA;
+  font-weight: 700;
+}
+
+/* reset input */
+.form__field:required, .form__field:invalid {
+  box-shadow: none;
+}
+
+.Session-form-container{
+  display: flex;
+  justify-content: center;
+}
+
+/* create session button  */
+.CSButtton {
+  padding: 0;
+  margin: 0;
+  border: none;
+  background: none;
+  cursor: pointer;
+  display: inline-block; /* Ensure inline display */
+  vertical-align: top; /* Align with the top of the inputs */
+  margin-left: 10px; /* Add some space between the button and the inputs */
+}
+
+.CSButtton {
+  --primary-color: #1F5459;
+  --hovered-color: #25DFBA;
+  position: relative;
+  display: flex;
+  font-weight: 600;
+  font-size: 20px;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.CSButtton p {
+  margin: 0;
+  position: relative;
+  font-size: 20px;
+  color: var(--primary-color);
+}
+
+.CSButtton::after {
+  position: absolute;
+  content: "";
+  width: 0;
+  left: 0;
+  bottom: 13px;
+  background: var(--hovered-color);
+  height: 2px;
+  transition: 0.3s ease-out;
+}
+
+.CSButtton p::before {
+  position: absolute;
+  /*   box-sizing: border-box; */
+  content: "Create";
+  width: 0%;
+  inset: 0;
+  color: var(--hovered-color);
+  overflow: hidden;
+  /* transition: 0.3s ease-out; */
+}
+
+.CSButtton:hover::after {
+  width: 100%;
+}
+
+.CSButtton:hover p::before {
+  width: 100%;
+}
+
+.CSButtton:hover svg {
+  /* transform: translateX(4px); */
+  color: var(--hovered-color);
+}
+
+.CSButtton svg {
+  color: var(--primary-color);
+  transition: 0.2s;
+  position: relative;
+  width: 15px;
+  transition-delay: 0.2s;
 }
 
 .profileCard {
