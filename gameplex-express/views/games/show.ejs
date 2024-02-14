@@ -60,9 +60,7 @@
             if (user.googleId === session.playersIds[0].googleId) {%>
             <form action="/sessions/<%= session._id %>?_method=DELETE&id=<%= game._id %>" method="post">
                 <button class="btnRemove" type="submit" value="Remove Session">
-                    <svg viewBox="0 0 15 17.5" height="17.5" width="15" xmlns="http://www.w3.org/2000/svg" class="icon">
-                    <path transform="translate(-2.5 -1.25)" d="M15,18.75H5A1.251,1.251,0,0,1,3.75,17.5V5H2.5V3.75h15V5H16.25V17.5A1.251,1.251,0,0,1,15,18.75ZM5,5V17.5H15V5Zm7.5,10H11.25V7.5H12.5V15ZM8.75,15H7.5V7.5H8.75V15ZM12.5,2.5h-5V1.25h5V2.5Z" id="Fill"></path>
-                  </svg>
+                    <img  class="imgStyleRemove"  src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAABWElEQVR4nO2aX2rDMAzGv6feoGW9ytrrdd2OtRQ2+udpfdgF2l1DI6BCCElsWYktGv1AUKgs9UOy7JIAzvOyAPAB4A8ABewOYM9rzPEeIaBtbzDInX/ca4TvplEZcxDbVP7ZMC3kkND3U9nhWYRUY1SmVD/T2HldiBLyivTgraWEvLV68NZSQt5ac2+tCsAFwEoQs/b9AvCpyCsmFPDE318jxazYt15zVOQVEwq4BPDDPr8A1gLfF0VeMTEBY8RIRBSdWkNipCKKj98uMSkiTJwjzc18bX2WTDYqLQStKkgrYV7IOkPeQWbZWsuOjS05Z0yO3+aeSBFDFg7Ero0tFUOlryhD00kihnILOSsujSdFXjGhgN+J1/gLr03NK2Y2f6ymglxID14RJeSt1YO3lhLy1gq8DFA/6M/FlnPexgy6j3zyOoXtxhSyYDGPyuSwG4sw+eKNgwD//ciLmFMHTmUAAAAASUVORK5CYII=">
                   </button>
             </form>
     
@@ -78,8 +76,10 @@
             <%} %>
             <%if (session.playersIds.some(obj => obj.googleId === user.googleId)) { %>
                 <form action="/sessions/<%= session._id %>/leave?_method=PUT&id=<%= game._id %>" method="post">
-                <button class="btnLeave" type="submit" value="Leave Session">
-                    <img class="imgStyleExit" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAABaUlEQVR4nO3aP07DMBQGcMOAvm9oUWHlIqgHY+0ChZtwAhbEARgCDN1YC5PfE5wgKKJBQkoiu1XJs/EneYzkn17+2C92tXNHSt4o8K5kbWIAb0oum7m50Ch5PfrEe4aQV+GQb30twLkzEgHmbWWCL2r1zlg0dl4FsudoqYixaKmIsQhwkcVbq4mQC5cDJCoFsscoeavAnc5mx0nfWgJUm7XWYzDGIsSTZ0K+bhaz1cd0epIkZCuMVUgH5mkQYxkShbEO6cJ8TianLkVIECYVSAfm+RcmJcggJjVIL2YXSO3cgQAvo7eNgGpXyGHz4CUPyebWMvUa1oQgfuhbkgrE5/BB9CHrLesQH7qctwzxMXsSqxCfw8bK57LVVWCVRfNByAcl75NvB22VAvmDSA5NbCEXUfOyCtHyx8pYtFTEWPT/VgQ/h2rmzt6hmnXwRc25qLHbOb1tHvIyGLI5eLZsK2NiAOsGEXPw7Au82GIvZp82KAAAAABJRU5ErkJggg==">
+                <button class="btnLeave" type="submit" value="Leave Session" >
+                    <img  class="imgStyleExit" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAABNklEQVR4nO3aMU4DMRCF4R8KWiRofRHEwWi3gcBNOEEaxAEoAhR0tCzXcGTJkdAqGzyJgt4MfpJLS/NpdtdrywBnwAPwDWSRMQKLWltz7gUKnxt3FshYJ12hk+sfnWnORq+WbK2rQ46c3Dsiltw7IpabKB0pGQgCMaVDjphHYAmce+/Iqtb0YsEoQhLwWesqqAuvkL0wqpAp5vU3jDLEhFGHbMNc4hTShPECmWLephhPkJ0Yb5BZzCGQE+Bd4NhodSjktL547iFhHi2pz3B2BEm71hIvkBRhQUwt/1vqkNT6O68MSZY9iSokRdhYpShb3Y8ohw/PwFOE46C90iF/kCFCRwZrXaqQ3CFiyb0jYsn/tiNjnVAusqhdqvmyTFoIHOfMjVsLpFzuKphNZxRG6URBNF88WwOccZGxk5w4qAAAAABJRU5ErkJggg==">
+
+                   
                   </button>
             </form>
             <%} %>
@@ -91,7 +91,7 @@
 
             <br>
             <form action="/sessions/<%= session._id %>/comments?_method=PUT&id=<%= game._id %>" method="post">
-                <input type="text" placeholder="Comment" name="content" class="inputComment">
+                <input type="text" placeholder="Add Comment" name="content" class="inputComment">
                 <button class="btnAddComment" type="submit" value="comment">
                     <img class="imgStyleADD" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAAEaUlEQVR4nO1azY8UVRAv6jEuBCOwyzpDV82OS+YCGjXxb/AbP29+3SRyUQl6hfVInJ2p17tI9MTdo0aNJmIUNSCIeHEXkJPKwYg3UQJmSL1+r3eSndmdGXpmegmVdNJJv37vVb+qX1X9qgFuy60qdR43ws8aoRoKf2IsLxqhv42lq+7Se+EF90yoZuLyM3BkaivkQo5WNmBMr6DQF8by/8Zys6dL+DoKfY6WXoa4OjZ8Beq8ES2/ZSxdWtoU/YfCx9DyAT0ZkNJO98U/eKjgLr2X0k59hsIH0fJX+k7L+3+glPfrxxmKDqZBTxpLF8MG0NIpbPCrcGjH5p4nk8oWFNqDQqdbFPrVCD0OA5OjlQ3G8vtLCvCPJi4/ktX0JubH0PJPLQq9l/3pHK6U3MYTu/4HY34dPgST7SIAOidaetNYuhJOG+x0MZvJ56am3XEnSiwULN8HA5aCpfuN5XPJ6dAF3cPNzRiXJsOEKPQDzG7fBsOSI1Nb0fK3XpmLahX9Q6s3J7T8PdSKm2DYUituQssnUjPrx2dSxxZe0GAHo5L5aCI1MwWA3iE2cexh+ER3PkMOABTdunurzhtDnHDolBNBoX2p83djYhjz2yFODARi+5UZWI/CZz3w7Ft5cFwd01Qh0bz8MORMjKUn/KlcWvFUNHlLESKP0oR1LUj6YsdxPottutwpI1H4dPCd1XxCr3nz+myleuK6ZqR9JYAdJOROWQZK42ocvtZ2n8byc/7Ivsxs0UEoAs4FvnbzNqKnli8oNOsVOZB3RYzQO97p31320JenTSPlp3OviE2t56PlD4XPuwW1ssu5IoVG+V4/72KbBemyWzDjvGoQisDs9m0+hfqzzYIOCZows+uOXudFoeM9Ew+h0hQ63rMicXUs8AT5UcTSN1krcnnNmFbsCr4OpnWrODsG+FUGMP9x5PkV4NcHROGDazogGuVtE0WOrZkUxUa72ydjIWmUypbcKlLn8TRpjKt3tR2jhLLH9j1ZravQ3BfEdhC00V7vH592GgPY4Je8Iqchr4WV8BnvAi+sEmjod4/Rj0LOxNhot9/bb6u2IZTa9xqfySH58LO3mDe6Y90916uEMuRE0H9gJeu6bgppf8Lj9BUlx2DEUpDoQSP0rw/YvbUylJ5Mv8B8NAGjkljzKrrgk8S5PklsOuWh7sRISOzDk3eipZPezE/232dMsszFtK0QlyZhWFLncRT+LrTjbr7ho42ecLSWzxXm6AEYhk/YYE58HqRyTzYz2+liMDMFAMe9zsB6GAjElvcHx3bmVCvene0iCSwHANA4czaz7msT1mkrA32cSB17kL137U+0mJpj7ZXG7OsvBvUDG+0NaYfxppRlt3h1RHP9Cp/OJCZ3VdNrtDyjvJNWcQ62lQPQaz6a0KaRFkU6JknFE54gpB2oEXskf0DE1TFlxZVQdiVA7+TDNa1MXQI4EgXayaEdm5WL1aoNhT/W3qMR/mvppxp3/4uWpzrG8bad6onbAmtfbgDnrqX2oPrNwAAAAABJRU5ErkJggg==">
                   </button>
