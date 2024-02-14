@@ -1,5 +1,19 @@
 <%- include('../partials/header') %>
 
+<div class="scroll-snap-card">
+    <div class="slide1">
+        <p class="tip">Scroll On Me</p>
+    </div>
+    <div class="slide2">
+        <p class="tip">Scroll On Me</p>
+    </div>
+    <div class="slide3">
+        <p class="tip">Scroll On Me</p>
+    </div>
+</div>
+
+
+
 <h1 class="fontTitle"><%= game.name %></h1>
 <img src="<%= game.poster %>" alt="<%= game.name %>" class="gameImg">
 <p>Description: <%= game.type %></p>
@@ -22,10 +36,7 @@
     </div>
     <button value="Create Session" type="submit" class="CSButtton">  
         <p>Create</p>
-       
-      </button>
-      
-   
+    </button>
     </div>
     </form>
     <% } %>
