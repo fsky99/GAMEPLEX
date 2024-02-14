@@ -53,7 +53,7 @@ You can book sessions with people online, Also you acn specify the number of pla
 
 ---
 ### What we are most proud of is :
-## Code in the backend for creating a session:
+## Creating a session for a game:
 ```
 const createSession = async (req, res) => {
   try {
@@ -80,6 +80,28 @@ const createSession = async (req, res) => {
     res.redirect(`/games/${req.params.id}`)
   }
 }
+```
+
+## Search function for the games:
+```
+ const searchInput = document.getElementById('searchInput');
+  const cards = document.querySelectorAll('.card');
+  searchInput.addEventListener('input', function() {
+    const searchTerm = this.value.toLowerCase().trim();
+    cards.forEach(card => {
+      const title = card.querySelector('.card__title').textContent.toLowerCase();
+      const description = card.querySelector('.card__description').textContent.toLowerCase();
+    
+      if (title.includes(searchTerm) || description.includes(searchTerm)) {
+        card.parentElement.style.display = 'flex'; 
+        card.style.display = 'block'; 
+      } else {
+        card.parentElement.style.display = 'none'; 
+        card.style.display = 'none'; 
+      }
+    });
+  });
+
 ```
 ---
 ### Future plans:
