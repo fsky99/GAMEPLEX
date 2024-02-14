@@ -42,15 +42,15 @@
     <div class="scroll-snap-card">
         <div class="slide one">
             <div>
-                <h6>Location: <%= session.location %></h6>
-                <h6>Date: <%= session.date %></h6>
-                <h6>Players: <%= session.playersIds.length %>/<%= session.max %></h6>
+                <h6 class="h6Style">Location: <%= session.location %></h6>
+                <h6 class="h6Style">Date: <%= session.date %></h6>
+                <h6 class="h6Style">Players: <%= session.playersIds.length %>/<%= session.max %></h6>
                 <span>
                     <% session.playersIds.forEach(player => { %>
-                        <label><%= player.name %></label>
+                        <label> - <%= player.name %></label><br>
                     <% }); %>
                 </span>
-                <h6><%= session.playersIds.length %>/<%= session.max %></h6>
+                <h6 class="h6Style"><%= session.playersIds.length %>/<%= session.max %></h6>
                 
            
             <%if (user){ 
@@ -87,8 +87,6 @@
                     <form action="/sessions/<%= session._id %>/comments?_method=DELETE&id=<%= game._id %>&index=<%= i %>" method="post">
                 <input type="submit" value="Delete Comment">
             </form>
-            <hr>
-
             <%} })%>
         
         <% } %>

@@ -50,13 +50,12 @@
 
 .scroll-snap-card {
   height: 250px;
-  width: 450px;
+  width: 950px;
   scroll-snap-type: y mandatory;
   overflow: auto;
   border-radius: 10px;
   position: relative;
   margin: 0 auto;
-  /* padding: 0 10px; */
   margin-bottom: 20px;
   justify-content: center;
   text-align: left;
@@ -64,7 +63,7 @@
 
 .scroll-snap-card .btn {
   position: absolute;
-  bottom: 10px; /* Adjust the positioning as needed */
+  bottom: 10px;
   left: 50%;
   transform: translateX(-50%);
   background-color: #ffffff;
@@ -81,12 +80,18 @@
   height: 100%;
   scroll-snap-align: start;
   display: flex;
+  padding-left: 70px;
+  padding-top: 30px;
 }
 
 .scroll-snap-card .slide p {
   font-size: 1em;
   color: white;
   font-weight: 700;
+}
+
+.h6Style {
+  font-size: 13px;
 }
 
 h3 {
