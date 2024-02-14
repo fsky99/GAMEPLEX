@@ -29,12 +29,15 @@ You can book sessions with people online, Also you acn specify the number of pla
 ## Game Session ![Game Session](P3.png)
 ## Profile Page ![Profile Page](P7.png)
 
+## Website:
+
 
 ### Technologies used
 
 - [x] VSCode (Editor for Writing the Code)
 - [x] HTML (Structure of the pages)
 - [x] CSS (Style of the pages)
+- [x] EJS (MockUp Frontend)
 - [x] Express (API Calls)
 - [x] MongoDB (Databse)
 - [x] JavaScript (Functionality for the pages)
@@ -42,8 +45,6 @@ You can book sessions with people online, Also you acn specify the number of pla
 - [x] Google Fonts (Fonts for the page)
 - [x] Trelllo (Managment for the work)
 - [x] Drawio (ERD for the database)
-
-
 
 ---
 ### What we have learned:
