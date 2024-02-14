@@ -49,7 +49,8 @@ You can book sessions with people online, Also you acn specify the number of pla
 ---
 ### What we have learned:
 
-- [x] 
+- [x] CSS.
+- [x] EJS.
 
 ---
 ### What we are most proud of is :
@@ -106,7 +107,8 @@ const createSession = async (req, res) => {
 ---
 ### Future plans:
 
-- [ ] 
+- [ ] Improve the design.
+- [ ] Automatically delete or archive sessions when they end.
 
 
 ---
