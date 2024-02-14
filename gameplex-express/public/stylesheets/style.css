@@ -13,6 +13,8 @@
   position: relative;
   animation: neon-animation 1.5s ease-in-out infinite alternate;
 }
+
+
 /* 
 @keyframes neon-animation {
   0% {
@@ -576,6 +578,15 @@ button svg {
   transition: border-color 0.2s;
 }
 
+/* Assuming your input has a class named 'date-input' */
+.form__field.date-input {
+  color: #fff; /* Set the text color to white */
+}
+
+.form__field.date-input::-webkit-calendar-picker-indicator {
+  filter: brightness(0) invert(1); /* Set the color of the icon to white */
+}
+
 .form__field::placeholder {
   color: transparent;
 }
@@ -584,6 +595,7 @@ button svg {
   font-size: 17px;
   cursor: text;
   top: 20px;
+  color: #fff;
 }
 
 .form__label {
