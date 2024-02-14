@@ -1,8 +1,13 @@
 <%- include('../partials/header') %>
 
+
+
 <h1 class="fontTitle"><%= game.name %></h1>
 <img src="<%= game.poster %>" alt="<%= game.name %>" class="gameImg">
 <p>Description: <%= game.type %></p>
+
+
+
 <% if(user){ %>
     <form action="/games/<%= game._id %>/sessions" method="post">
         <div class="Session-form-container">
@@ -28,40 +33,54 @@
    
     </div>
     </form>
+
     <% } %>
-<% if (game.sessionIds.length){ %>
-    <% game.sessionIds.forEach(session => { %>
-        
-        <div>
-            <h6>Location: <%= session.location %></h6>
-            <h6>Date: <%= session.date %></h6>
-            <h6>Players: <%= session.playersIds.length %>/<%= session.max %></h6>
-            <span>
-                <% session.playersIds.forEach(player => { %>
-                    <label><%= player.name %></label>
-                <% }); %>
-            </span>
-            <h6><%= session.playersIds.length %>/<%= session.max %></h6>
-        </div>
-        <%if (user){ 
-            if (session.playersIds.length > 0){
-        if (user.googleId === session.playersIds[0].googleId) {%>
-        <form action="/sessions/<%= session._id %>?_method=DELETE&id=<%= game._id %>" method="post">
-            <input type="submit" value="Remove Session">
-        </form>
-        <% } }%>
-        <% if (!session.playersIds.some(obj => obj.googleId === user.googleId) && session.playersIds.length < session.max) { %>
-            <form action="/sessions/<%= session._id %>/join?_method=PUT&id=<%= game._id %>" method="post">
-            <input type="submit" value="Join Session">
-        </form>
-        <%} %>
-        <% if (session.playersIds.some(obj => obj.googleId === user.googleId)) { %>
-            <form action="/sessions/<%= session._id %>/leave?_method=PUT&id=<%= game._id %>" method="post">
-            <input type="submit" value="Leave Session">
-        </form>
-        <%} %>
-        <% if (session.playersIds.some(obj => obj.googleId === user.googleId)) { 
-            session.comments.forEach((comment,i) => { %>
+
+    <% if (game.sessionIds.length){ %>
+        <% game.sessionIds.forEach(session => { %>
+
+    <div class="scroll-snap-card">
+        <div class="slide one">
+            <div>
+                <h6 class="h6Style">Location: <%= session.location %></h6>
+                <h6 class="h6Style">Date: <%= session.date %></h6>
+                <h6 class="h6Style">Players: <%= session.playersIds.length %>/<%= session.max %></h6>
+                <span>
+                    <% session.playersIds.forEach(player => { %>
+                        <label> - <%= player.name %></label><br>
+                    <% }); %>
+                </span>
+                <h6 class="h6Style"><%= session.playersIds.length %>/<%= session.max %></h6>
+                
+           
+            <%if (user){ 
+                if (session.playersIds.length > 0){
+            if (user.googleId === session.playersIds[0].googleId) {%>
+            <form action="/sessions/<%= session._id %>?_method=DELETE&id=<%= game._id %>" method="post">
+                <input type="submit" value="Remove Session">
+            </form>
+    
+            <% } }%>
+            <% if (!session.playersIds.some(obj => obj.googleId === user.googleId) && session.playersIds.length < session.max) { %>
+                <form action="/sessions/<%= session._id %>/join?_method=PUT&id=<%= game._id %>" method="post">
+                <input type="submit" value="Join Session">
+            </form>
+    
+            <%} %>
+            <% if (session.playersIds.some(obj => obj.googleId === user.googleId)) { %>
+                <form action="/sessions/<%= session._id %>/leave?_method=PUT&id=<%= game._id %>" method="post">
+                <input type="submit" value="Leave Session">
+            </form>
+        </div>        </div>
+            <%} %>
+        <div class="slide two">
+              
+        <% if (session.playersIds.some(obj => obj.googleId === user.googleId)) {  %>
+            <form action="/sessions/<%= session._id %>/comments?_method=PUT&id=<%= game._id %>" method="post">
+                <input type="text" placeholder="Comment" name="content">
+                <input type="submit" value="comment">
+            </form>
+            <%    session.comments.forEach((comment,i) => { %>
                 <label><%= comment.name %></label>
                 <p><%= comment.content %></p>
                 <% if ( user.name === comment.name) { %>
@@ -69,15 +88,19 @@
                 <input type="submit" value="Delete Comment">
             </form>
             <%} })%>
-            <form action="/sessions/<%= session._id %>/comments?_method=PUT&id=<%= game._id %>" method="post">
-                <input type="text" placeholder="Comment" name="content">
-                <input type="submit" value="comment">
-            </form>
+        
         <% } %>
+        </div>
+    </div>
+    
+   
+
+        
+   
+    
 <%}})} %>
 
 
 
 
 <%- include('../partials/footer') %>
-
