@@ -13,8 +13,8 @@
   position: relative;
   animation: neon-animation 1.5s ease-in-out infinite alternate;
 }
-
-/* @keyframes neon-animation {
+/* 
+@keyframes neon-animation {
   0% {
     text-shadow: 0 0 10px #b4c5c0, 0 0 20px #b4c5c0, 0 0 30px #b4c5c0,
       0 0 40px #1cae89, 0 0 70px #1cae89, 0 0 80px #1cae89, 0 0 100px #1cae89,
