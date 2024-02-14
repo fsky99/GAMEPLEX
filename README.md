@@ -54,7 +54,8 @@ You can book sessions with people online, Also you acn specify the number of pla
 ---
 ### What we are most proud of is :
 ## Code in the backend for creating a session:
-`const createSession = async (req, res) => {
+```
+const createSession = async (req, res) => {
   try {
     console.log(req.user)
     const session = new Session({
@@ -79,7 +80,7 @@ You can book sessions with people online, Also you acn specify the number of pla
     res.redirect(`/games/${req.params.id}`)
   }
 }
-`
+```
 ---
 ### Future plans:
 
