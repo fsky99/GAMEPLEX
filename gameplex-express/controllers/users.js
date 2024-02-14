@@ -4,7 +4,7 @@ const show = async (req, res) => {
   try {
     const user = await User.findById(req.user._id).populate('sessionsId')
     for (let i = 0; i < user.sessionsId.length; i++) {
-      await user.sessionsId[i].populate('playersIds')
+      await user.sessionsId[i].populate(['playersIds', 'gameId'])
     }
     user.save()
     res.render('users/profile', { title: user.name, user })

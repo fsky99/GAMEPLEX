@@ -17,6 +17,7 @@
   <% if (user.sessionsId.length){ %>
     <% user.sessionsId.forEach(session => { %>
       <div>
+        <h6>Game: <%= session.gameId.name %></h6>
         <h6>Location: <%= session.location %></h6>
         <h6>Date: <%= session.date %></h6>
         <h6>Players: <%= session.playersIds.length %>/<%= session.max %></h6>
