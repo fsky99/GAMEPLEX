@@ -18,21 +18,34 @@
      user.sessionsId.sort((a,b) => {
     return b.createdAt - a.createdAt;
 })
-    %>
-    <% user.sessionsId.forEach(session => { %>
-      <div>
-        <h6>Game: <%= session.gameId.name %></h6>
-        <h6>Location: <%= session.location %></h6>
-        <h6>Date: <%= session.date %></h6>
-        <h6>Players: <%= session.playersIds.length %>/<%= session.max %></h6>
-        <span>
-          <% session.playersIds.forEach(player => { %>
-            <label><%= player.name %></label>
-            <% }); %>
-          </span>
-          <h6><%= session.playersIds.length %>/<%= session.max %></h6>
-        </div>
+%>
+
+
+
+<% user.sessionsId.forEach(session => { %>
+
+<div class="scroll-snap-card">
+  <div class="slide one">
+    <div>
+      <h6>Game: <%= session.gameId.name %></h6>
+      <h6>Location: <%= session.location %></h6>
+      <h6>Date: <%= session.date %></h6>
+      <h6>Players: <%= session.playersIds.length %>/<%= session.max %></h6>
+      <span>
+        <% session.playersIds.forEach(player => { %>
+          <label> - <%= player.name %> <br></label>
+          <% }); %>
+        </span>
+        <h6><%= session.playersIds.length %>/<%= session.max %></h6>
       </div>
+    </div>
+
+    </div></div>
+
+
+
+
+
       <% })} %>
     </div>
       <%- include('../partials/footer') %>

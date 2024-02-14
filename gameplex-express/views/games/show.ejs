@@ -61,41 +61,64 @@
                 if (session.playersIds.length > 0){
             if (user.googleId === session.playersIds[0].googleId) {%>
             <form action="/sessions/<%= session._id %>?_method=DELETE&id=<%= game._id %>" method="post">
-                <input type="submit" value="Remove Session">
+                <button class="btnRemove" type="submit" value="Remove Session">
+                    <svg viewBox="0 0 15 17.5" height="17.5" width="15" xmlns="http://www.w3.org/2000/svg" class="icon">
+                    <path transform="translate(-2.5 -1.25)" d="M15,18.75H5A1.251,1.251,0,0,1,3.75,17.5V5H2.5V3.75h15V5H16.25V17.5A1.251,1.251,0,0,1,15,18.75ZM5,5V17.5H15V5Zm7.5,10H11.25V7.5H12.5V15ZM8.75,15H7.5V7.5H8.75V15ZM12.5,2.5h-5V1.25h5V2.5Z" id="Fill"></path>
+                  </svg>
+                  </button>
             </form>
     
             <% } }%>
             <% if (!session.playersIds.some(obj => obj.googleId === user.googleId) && session.playersIds.length < session.max) { %>
                 <form action="/sessions/<%= session._id %>/join?_method=PUT&id=<%= game._id %>" method="post">
-                <input type="submit" value="Join Session">
+                <button class="btnJoinSession" type="submit" value="Join Session">
+                    <img class="joinSessionIcon" src="data:image/png;base64,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">
+                   </button>
+                   
             </form>
     
             <%} %>
             <% if (session.playersIds.some(obj => obj.googleId === user.googleId)) { %>
                 <form action="/sessions/<%= session._id %>/leave?_method=PUT&id=<%= game._id %>" method="post">
-                <input type="submit" value="Leave Session">
+                <button class="btnLeave" type="submit" value="Leave Session">
+                    <img class="imgStyleExit" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAABaUlEQVR4nO3aP07DMBQGcMOAvm9oUWHlIqgHY+0ChZtwAhbEARgCDN1YC5PfE5wgKKJBQkoiu1XJs/EneYzkn17+2C92tXNHSt4o8K5kbWIAb0oum7m50Ch5PfrEe4aQV+GQb30twLkzEgHmbWWCL2r1zlg0dl4FsudoqYixaKmIsQhwkcVbq4mQC5cDJCoFsscoeavAnc5mx0nfWgJUm7XWYzDGIsSTZ0K+bhaz1cd0epIkZCuMVUgH5mkQYxkShbEO6cJ8TianLkVIECYVSAfm+RcmJcggJjVIL2YXSO3cgQAvo7eNgGpXyGHz4CUPyebWMvUa1oQgfuhbkgrE5/BB9CHrLesQH7qctwzxMXsSqxCfw8bK57LVVWCVRfNByAcl75NvB22VAvmDSA5NbCEXUfOyCtHyx8pYtFTEWPT/VgQ/h2rmzt6hmnXwRc25qLHbOb1tHvIyGLI5eLZsK2NiAOsGEXPw7Au82GIvZp82KAAAAABJRU5ErkJggg==">
+                  </button>
             </form>
         </div>        </div>
             <%} %>
+            <% if (session.playersIds.some(obj => obj.googleId === user.googleId)) {  %>
+
         <div class="slide two">
               
-        <% if (session.playersIds.some(obj => obj.googleId === user.googleId)) {  %>
+
+            <br>
             <form action="/sessions/<%= session._id %>/comments?_method=PUT&id=<%= game._id %>" method="post">
-                <input type="text" placeholder="Comment" name="content">
-                <input type="submit" value="comment">
+                <input type="text" placeholder="Comment" name="content" class="inputComment">
+                <button class="btnAddComment" type="submit" value="comment">
+                    <img class="imgStyleADD" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAAEaUlEQVR4nO1azY8UVRAv6jEuBCOwyzpDV82OS+YCGjXxb/AbP29+3SRyUQl6hfVInJ2p17tI9MTdo0aNJmIUNSCIeHEXkJPKwYg3UQJmSL1+r3eSndmdGXpmegmVdNJJv37vVb+qX1X9qgFuy60qdR43ws8aoRoKf2IsLxqhv42lq+7Se+EF90yoZuLyM3BkaivkQo5WNmBMr6DQF8by/8Zys6dL+DoKfY6WXoa4OjZ8Beq8ES2/ZSxdWtoU/YfCx9DyAT0ZkNJO98U/eKjgLr2X0k59hsIH0fJX+k7L+3+glPfrxxmKDqZBTxpLF8MG0NIpbPCrcGjH5p4nk8oWFNqDQqdbFPrVCD0OA5OjlQ3G8vtLCvCPJi4/ktX0JubH0PJPLQq9l/3pHK6U3MYTu/4HY34dPgST7SIAOidaetNYuhJOG+x0MZvJ56am3XEnSiwULN8HA5aCpfuN5XPJ6dAF3cPNzRiXJsOEKPQDzG7fBsOSI1Nb0fK3XpmLahX9Q6s3J7T8PdSKm2DYUituQssnUjPrx2dSxxZe0GAHo5L5aCI1MwWA3iE2cexh+ER3PkMOABTdunurzhtDnHDolBNBoX2p83djYhjz2yFODARi+5UZWI/CZz3w7Ft5cFwd01Qh0bz8MORMjKUn/KlcWvFUNHlLESKP0oR1LUj6YsdxPottutwpI1H4dPCd1XxCr3nz+myleuK6ZqR9JYAdJOROWQZK42ocvtZ2n8byc/7Ivsxs0UEoAs4FvnbzNqKnli8oNOsVOZB3RYzQO97p31320JenTSPlp3OviE2t56PlD4XPuwW1ssu5IoVG+V4/72KbBemyWzDjvGoQisDs9m0+hfqzzYIOCZows+uOXudFoeM9Ew+h0hQ63rMicXUs8AT5UcTSN1krcnnNmFbsCr4OpnWrODsG+FUGMP9x5PkV4NcHROGDazogGuVtE0WOrZkUxUa72ydjIWmUypbcKlLn8TRpjKt3tR2jhLLH9j1ZravQ3BfEdhC00V7vH592GgPY4Je8Iqchr4WV8BnvAi+sEmjod4/Rj0LOxNhot9/bb6u2IZTa9xqfySH58LO3mDe6Y90916uEMuRE0H9gJeu6bgppf8Lj9BUlx2DEUpDoQSP0rw/YvbUylJ5Mv8B8NAGjkljzKrrgk8S5PklsOuWh7sRISOzDk3eipZPezE/232dMsszFtK0QlyZhWFLncRT+LrTjbr7ho42ecLSWzxXm6AEYhk/YYE58HqRyTzYz2+liMDMFAMe9zsB6GAjElvcHx3bmVCvene0iCSwHANA4czaz7msT1mkrA32cSB17kL137U+0mJpj7ZXG7OsvBvUDG+0NaYfxppRlt3h1RHP9Cp/OJCZ3VdNrtDyjvJNWcQ62lQPQaz6a0KaRFkU6JknFE54gpB2oEXskf0DE1TFlxZVQdiVA7+TDNa1MXQI4EgXayaEdm5WL1aoNhT/W3qMR/mvppxp3/4uWpzrG8bad6onbAmtfbgDnrqX2oPrNwAAAAABJRU5ErkJggg==">
+                  </button>
             </form>
+            <br><br><br>
+            <% if(session.comments.length > 0) {%>
             <%    session.comments.forEach((comment,i) => { %>
+                <div class="commentsCont">
 
                 <label><%= comment.name %></label>
                 <p><%= comment.content %></p>
                 <% if ( user.name === comment.name) { %>
                     <form action="/sessions/<%= session._id %>/comments?_method=DELETE&id=<%= game._id %>&index=<%= i %>" method="post">
-                <input type="submit" value="Delete Comment">
+                <button class="btnDelete" type="submit" value="Delete Comment">
+                    <svg viewBox="0 0 24 24" height="22" width="24" xmlns="http://www.w3.org/2000/svg" class="icon">
+                      <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
+                    </svg>
+                  </button>
             </form>
-            <%} })%>
-        
-        <% } %>
         </div>
+            <%} })%>
+         <% } %>
+        </div>
+        <% } %>
+
     </div>
     
    
