@@ -100,22 +100,34 @@
             </form>
             <br><br><br>
             <% if(session.comments.length > 0) {%>
-            <%    session.comments.forEach((comment,i) => { %>
-                <div class="commentsCont">
-
-                <label><%= comment.name %></label>
-                <p><%= comment.content %></p>
-                <% if ( user.name === comment.name) { %>
-                    <form action="/sessions/<%= session._id %>/comments?_method=DELETE&id=<%= game._id %>&index=<%= i %>" method="post">
-                <button class="btnDelete" type="submit" value="Delete Comment">
-                    <svg viewBox="0 0 24 24" height="22" width="24" xmlns="http://www.w3.org/2000/svg" class="icon">
-                      <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
-                    </svg>
-                  </button>
-            </form>
-        </div>
-            <%} })%>
-         <% } %>
+                <table>
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <%    session.comments.forEach((comment,i) => { %>
+                            <tr>
+                            <td><%= comment.name %></td>
+                            <td><%= comment.content %></td>
+                            <td> <% if ( user.name === comment.name) { %>
+                                <form action="/sessions/<%= session._id %>/comments?_method=DELETE&id=<%= game._id %>&index=<%= i %>" method="post">
+                            <button class="btnDelete" type="submit" value="Delete Comment">
+                                <svg viewBox="0 0 24 24" height="22" width="24" xmlns="http://www.w3.org/2000/svg" class="icon">
+                                  <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
+                                </svg>
+                              </button>
+                        </form>
+                    
+                    <%}%></td>
+                </tr>
+                        <%})%>
+                     <% } %>
+                    </tbody>
+                </table>
         </div>
         <% } %>
 
