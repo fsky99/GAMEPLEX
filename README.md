@@ -15,7 +15,7 @@ You can book sessions with people online, Also you acn specify the number of pla
 
 ---
 ### **_Game Link:_**
-##### Live Link: [GAMEPLEEX](https://gameplex.fly.dev/)
+##### Live Link: [GAMEPLEX](https://gameplex.fly.dev/)
 ---
 ### Screenshots:
 ## ERD:
@@ -117,4 +117,5 @@ const createSession = async (req, res) => {
 
 ##### Canva: [Canva](https://www.canva.com/)
 ##### Drawio: [Draw](https://app.diagrams.net/)
+##### Icons and Buttons: [Icons](https://uiverse.io/)
 
