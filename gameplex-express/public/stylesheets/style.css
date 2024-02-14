@@ -27,8 +27,6 @@
   }
 } */
 
-
-
 .btn {
   background-color: #ffffff;
   color: #000000;
@@ -40,27 +38,28 @@
   margin-top: 10px;
 }
 
-.red {
-  background-color: #f43f5e;
+.one {
+  background-color: #1f5459;
 }
 
-.blue {
-  background-color: #3b82f6;
-}
-
-.green {
-  background-color: #22c55e;
+.two {
+  background-color: #1f5459;
   display: flex;
   flex-direction: column;
 }
 
 .scroll-snap-card {
-  height: 350px;
+  height: 250px;
   width: 450px;
   scroll-snap-type: y mandatory;
   overflow: auto;
   border-radius: 10px;
   position: relative;
+  margin: 0 auto;
+  /* padding: 0 10px; */
+  margin-bottom: 20px;
+  justify-content: center;
+  text-align: left;
 }
 
 .scroll-snap-card .btn {
@@ -82,8 +81,6 @@
   height: 100%;
   scroll-snap-align: start;
   display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 .scroll-snap-card .slide p {
@@ -91,7 +88,6 @@
   color: white;
   font-weight: 700;
 }
-
 
 h3 {
   font-size: 160%;
@@ -529,7 +525,7 @@ button svg {
 }
 
 .gameImg {
-  width:350px;
+  width: 350px;
   height: 360px;
   display: block;
   margin-left: auto;
@@ -550,28 +546,28 @@ button svg {
 .profileDetsCon {
   display: flex;
   flex-direction: row;
-  justify-content: space-around;}
+  justify-content: space-around;
+}
 
 /* css for the session input  */
 .form__group {
   position: relative;
-  padding: 10px 0; 
+  padding: 10px 0;
   width: 100%;
   max-width: 180px;
   margin: 0 10px;
-  display: inline-block; 
-
+  display: inline-block;
 }
 
 .form__field {
   width: 100%;
   border: none;
-  border-bottom: 2px solid #1F5459;
+  border-bottom: 2px solid #1f5459;
   outline: 0;
   font-size: 17px;
   color: #fff;
   padding: 10px 0;
-    background: transparent;
+  background: transparent;
   transition: border-color 0.2s;
 }
 
@@ -591,7 +587,7 @@ button svg {
   display: block;
   transition: 0.2s;
   font-size: 17px;
-  color: #1F5459;
+  color: #1f5459;
   pointer-events: none;
 }
 
@@ -599,26 +595,27 @@ button svg {
   padding-bottom: 6px;
   font-weight: 700;
   border-width: 3px;
-  border-image: linear-gradient(to left, #1F5459, #25DFBA);
+  border-image: linear-gradient(to left, #1f5459, #25dfba);
   border-image-slice: 1;
 }
 
 .form__field:focus ~ .form__label {
   position: absolute;
-  top: 10px; 
-  font-size: 14px; 
+  top: 10px;
+  font-size: 14px;
   display: block;
   transition: 0.2s;
-  color: #25DFBA;
+  color: #25dfba;
   font-weight: 700;
 }
 
 /* reset input */
-.form__field:required, .form__field:invalid {
+.form__field:required,
+.form__field:invalid {
   box-shadow: none;
 }
 
-.Session-form-container{
+.Session-form-container {
   display: flex;
   justify-content: center;
 }
@@ -636,8 +633,8 @@ button svg {
 }
 
 .CSButtton {
-  --primary-color: #1F5459;
-  --hovered-color: #25DFBA;
+  --primary-color: #1f5459;
+  --hovered-color: #25dfba;
   position: relative;
   display: flex;
   font-weight: 600;
@@ -744,16 +741,15 @@ button svg {
   background-color: #2b818a;
   transition-duration: 0.5s;
 }
- /* css for search box  */
- .searchGame {
+/* css for search box  */
+.searchGame {
   --input-line: #cccccc;
 
   --search-max-width: 250px;
   --search-min-width: 150px;
   --border-radius: 5px;
-  --transition-cubic-bezier: 150ms cubic-bezier(0.4,0,0.2,1);
+  --transition-cubic-bezier: 150ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-
 
 .search-boxGame {
   max-width: var(--search-max-width);
@@ -845,11 +841,11 @@ button svg {
   border-bottom-right-radius: var(--border-radius);
   border-top-right-radius: var(--border-radius);
   transition: var(--transition-cubic-bezier);
-  opacity: .4;
+  opacity: 0.4;
 }
 
 .btn-icon-contentGame:hover {
-  opacity: .8;
+  opacity: 0.8;
 }
 
 .search-iconGame {
