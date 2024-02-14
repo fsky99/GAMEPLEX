@@ -92,7 +92,6 @@ const removeSession = async (req, res) => {
       }
     )
     await Session.deleteOne({ _id: req.params.id })
-    await Session.save()
 
     res.redirect(`/games/${req.query.id}`)
   } catch (error) {

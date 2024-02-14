@@ -36,7 +36,12 @@
 
     <% } %>
 
+
     <% if (game.sessionIds.length){ %>
+    <% if (game.sessionIds.length){ 
+        game.sessionIds.sort((a,b) => {
+    return b.createdAt - a.createdAt;
+})%>
         <% game.sessionIds.forEach(session => { %>
 
     <div class="scroll-snap-card">
@@ -81,6 +86,7 @@
                 <input type="submit" value="comment">
             </form>
             <%    session.comments.forEach((comment,i) => { %>
+
                 <label><%= comment.name %></label>
                 <p><%= comment.content %></p>
                 <% if ( user.name === comment.name) { %>

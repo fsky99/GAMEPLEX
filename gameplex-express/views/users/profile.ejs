@@ -14,7 +14,11 @@
   </div>
 </div>
 <div>
-  <% if (user.sessionsId.length){ %>
+  <% if (user.sessionsId.length){ 
+     user.sessionsId.sort((a,b) => {
+    return b.createdAt - a.createdAt;
+})
+    %>
     <% user.sessionsId.forEach(session => { %>
       <div>
         <h6>Game: <%= session.gameId.name %></h6>
