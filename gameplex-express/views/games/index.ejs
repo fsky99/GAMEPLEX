@@ -1,27 +1,47 @@
 <%- include('../partials/header') %>
 
-    <h1 class="fontTitle"><%= title %></h1>
+<h1 class="fontTitle"><%= title %></h1>
 
-
-<div  class="cards-grid">
-  <% games.forEach(function(g) { %>
-    <a href='/games/<%= g._id %>'>
-
-  <div class="card">
-    <img src="<%= g.poster %>" alt="Card Image">
-    <div class="card__content">
-      <p class="card__title"><%= g.name %></p>
-      <p class="card__description"><%= g.type %></p>
+<div class="searchGame">
+  <div class="search-boxGame">
+    <div class="search-fieldGame">
+      <input id="searchInput" placeholder="Search..." class="inputGame" type="text">
     </div>
   </div>
-</a>
-
-
-  <% }); %>
-
-
 </div>
 
+<div class="cards-grid">
+  <% games.forEach(function(g) { %>
+  <a href="/games/<%= g._id %>">
+    <div class="card">
+      <img src="<%= g.poster %>" alt="Card Image">
+      <div class="card__content">
+        <p class="card__title"><%= g.name %></p>
+        <p class="card__description"><%= g.type %></p>
+      </div>
+    </div>
+  </a>
+  <% }); %>
+</div>
 
 <%- include('../partials/footer') %>
 
+<script>
+  const searchInput = document.getElementById('searchInput');
+  const cards = document.querySelectorAll('.card');
+  searchInput.addEventListener('input', function() {
+    const searchTerm = this.value.toLowerCase().trim();
+    cards.forEach(card => {
+      const title = card.querySelector('.card__title').textContent.toLowerCase();
+      const description = card.querySelector('.card__description').textContent.toLowerCase();
+    
+      if (title.includes(searchTerm) || description.includes(searchTerm)) {
+        card.parentElement.style.display = 'flex'; 
+        card.style.display = 'block'; 
+      } else {
+        card.parentElement.style.display = 'none'; 
+        card.style.display = 'none'; 
+      }
+    });
+  });
+</script>
