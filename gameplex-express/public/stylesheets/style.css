@@ -1,11 +1,11 @@
 @font-face {
-  font-family: "gameria";
-  src: url("../Fonts/gameria/GAMERIA.ttf") format("ttf");
+  font-family: 'gameria';
+  src: url('../Fonts/gameria/GAMERIA.ttf') format('ttf');
 }
 
 .gameName {
   padding-top: 90px;
-  font-family: "gameria", sans-serif;
+  font-family: 'gameria', sans-serif;
   font-size: 80px;
   color: #fff;
   text-align: center;
@@ -13,19 +13,6 @@
   position: relative;
   animation: neon-animation 1.5s ease-in-out infinite alternate;
 }
-/* 
-@keyframes neon-animation {
-  0% {
-    text-shadow: 0 0 10px #b4c5c0, 0 0 20px #b4c5c0, 0 0 30px #b4c5c0,
-      0 0 40px #1cae89, 0 0 70px #1cae89, 0 0 80px #1cae89, 0 0 100px #1cae89,
-      0 0 150px #1cae89;
-  }
-  100% {
-    text-shadow: 0 0 5px #b4c5c0, 0 0 10px #b4c5c0, 0 0 15px #b4c5c0,
-      0 0 20px #1cae89, 0 0 35px #1cae89, 0 0 40px #1cae89, 0 0 50px #1cae89,
-      0 0 75px #1cae89;
-  }
-} */
 
 .btn {
   background-color: #ffffff;
@@ -128,60 +115,9 @@ h3 {
   transform: translateY(1px);
 }
 
-/* #exploreBtn {
-  --green: #25dfba;
-  font-size: 15px;
-  padding: 0.7em 2.7em;
-  letter-spacing: 0.06em;
-  position: relative;
-  font-family: inherit;
-  border-radius: 0.6em;
-  overflow: hidden;
-  transition: all 0.3s;
-  line-height: 1.4em;
-  border: 2px solid var(--green);
-  background: linear-gradient(
-    to right,
-    rgba(27, 253, 156, 0.1) 1%,
-    transparent 40%,
-    transparent 60%,
-    rgba(27, 253, 156, 0.1) 100%
-  );
-  color: var(--green);
-  box-shadow: inset 0 0 10px rgba(27, 253, 156, 0.4),
-    0 0 9px 3px rgba(27, 253, 156, 0.1);
-}
-
-#exploreBtn:hover {
-  color: #25dfba;
-  box-shadow: inset 0 0 10px 25DFBA (27, 253, 156, 0.6),
-    0 0 9px 3px rgba(27, 253, 156, 0.2);
-}
-
-#exploreBtn:before {
-  content: "";
-  position: absolute;
-  left: -4em;
-  width: 4em;
-  height: 100%;
-  top: 0;
-  transition: transform 0.4s ease-in-out;
-  background: linear-gradient(
-    to right,
-    transparent 1%,
-    rgba(27, 253, 156, 0.1) 40%,
-    rgba(27, 253, 156, 0.1) 60%,
-    transparent 100%
-  );
-}
-
-#exploreBtn:hover:before {
-  transform: translateX(15em);
-} */
-
 body {
   padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font: 14px 'Lucida Grande', Helvetica, Arial, sans-serif;
   background-color: #051822;
   color: aliceblue;
   text-align: center;
@@ -204,10 +140,9 @@ a {
 
 */ h1 {
   color: #1cae89;
-  font-family: "Trebuchet MS";
+  font-family: 'Trebuchet MS';
 }
 
-/* input css  */
 .input {
   color: #fff;
   font-size: 0.9rem;
@@ -219,7 +154,7 @@ a {
   border: none;
   border-bottom: var(--border-height) solid var(--border-before-color);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  font-family: "Trebuchet MS";
+  font-family: 'Trebuchet MS';
 }
 
 .input-border {
@@ -231,17 +166,6 @@ a {
   left: 25%;
   transition: width 0.3s cubic-bezier(0.6, -0.28, 0.735, 0.045);
 }
-
-/* .input-border {
-  position: absolute;
-  background: linear-gradient(90deg, #25dfba 0%, #1cae89 50%, #1f5459 100%);
-  width: 0%;
-  height: 3px;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  transition: width 0.4s cubic-bezier(0.6, -0.28, 0.735, 0.045);
-} */
 
 .input:focus {
   outline: none;
@@ -273,7 +197,6 @@ a {
   width: 50%;
 }
 
-/* button css for the add new game  */
 .button {
   position: relative;
   overflow: hidden;
@@ -285,7 +208,7 @@ a {
   color: #fff;
   border: none;
   cursor: pointer;
-  font-family: "Trebuchet MS";
+  font-family: 'Trebuchet MS';
   font-size: 115%;
 }
 
@@ -299,7 +222,7 @@ a {
 }
 
 .button::before {
-  content: "";
+  content: '';
   position: absolute;
   top: 0;
   left: 0;
@@ -315,12 +238,9 @@ a {
   margin-top: 20px;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  /* gap: 50px ; */
   margin-bottom: 20px;
 }
 
-/* css for the cards
- */
 .card {
   width: 300px;
   height: 200px;
@@ -386,13 +306,11 @@ a {
   line-height: 1.4;
 }
 
-/* css for the google logo  */
 #googlepic {
   width: 50px;
   height: 50px;
 }
 
-/* nav bar css  */
 ul {
   margin: 150px auto 0;
   padding: 0;
@@ -419,7 +337,7 @@ li {
 .navBarClass:after {
   background: none repeat scroll 0 0 transparent;
   bottom: 0;
-  content: "";
+  content: '';
   display: block;
   height: 2px;
   left: 50%;
@@ -438,7 +356,6 @@ li {
   }
 }
 
-/* github buttons css  */
 .BtnGH {
   border: none;
   border-radius: 50%;
@@ -505,7 +422,7 @@ li {
   line-height: 1.25rem;
   font-weight: 700;
   text-align: center;
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Montserrat', sans-serif;
   vertical-align: middle;
   align-items: center;
   border-radius: 0.5rem;
@@ -555,7 +472,6 @@ button svg {
   justify-content: space-around;
 }
 
-/* css for the session input  */
 .form__group {
   position: relative;
   padding: 10px 0;
@@ -578,7 +494,7 @@ button svg {
 }
 
 .form__field.date-input {
-  color: #fff; 
+  color: #fff;
 }
 
 .form__field.date-input::-webkit-calendar-picker-indicator {
@@ -640,9 +556,9 @@ button svg {
   border: none;
   background: none;
   cursor: pointer;
-  display: inline-block; /* Ensure inline display */
-  vertical-align: top; /* Align with the top of the inputs */
-  margin-left: 10px; /* Add some space between the button and the inputs */
+  display: inline-block;
+  vertical-align: top;
+  margin-left: 10px;
 }
 
 .CSButtton {
@@ -665,7 +581,7 @@ button svg {
 
 .CSButtton::after {
   position: absolute;
-  content: "";
+  content: '';
   width: 0;
   left: 0;
   bottom: 13px;
@@ -676,13 +592,11 @@ button svg {
 
 .CSButtton p::before {
   position: absolute;
-  /*   box-sizing: border-box; */
-  content: "Create";
+  content: 'Create';
   width: 0%;
   inset: 0;
   color: var(--hovered-color);
   overflow: hidden;
-  /* transition: 0.3s ease-out; */
 }
 
 .CSButtton:hover::after {
@@ -694,7 +608,6 @@ button svg {
 }
 
 .CSButtton:hover svg {
-  /* transform: translateX(4px); */
   color: var(--hovered-color);
 }
 
@@ -734,7 +647,6 @@ button svg {
   padding: 40px;
   display: flex;
   flex-direction: column;
-  /* gap: 8px; */
 }
 
 .name {
@@ -754,7 +666,7 @@ button svg {
   background-color: #2b818a;
   transition-duration: 0.5s;
 }
-/* css for search box  */
+
 .searchGame {
   --input-line: #cccccc;
 
@@ -780,7 +692,6 @@ button svg {
   border-color: var(--input-border-hover-color);
 }
 
-/*Section input*/
 .search-fieldGame {
   position: relative;
   width: 100%;
@@ -826,7 +737,6 @@ button svg {
   color: var(--input-text-hover-color);
 }
 
-/*Search button*/
 .search-box-iconGame {
   width: 52px;
   height: 35px;
@@ -869,7 +779,6 @@ button svg {
   right: 8px;
 }
 
-/* delete comment css  */
 .btnDelete {
   background-color: transparent;
   position: relative;
@@ -877,7 +786,7 @@ button svg {
 }
 
 .btnDelete::after {
-  content: "delete";
+  content: 'delete';
   position: absolute;
   top: -130%;
   left: 50%;
@@ -915,8 +824,6 @@ button svg {
   top: -160%;
 }
 
-/* remove button css  */
-
 .btnRemove {
   background-color: transparent;
   position: absolute;
@@ -926,7 +833,7 @@ button svg {
 }
 
 .btnRemove::after {
-  content: "Remove";
+  content: 'Remove';
   position: absolute;
   top: -130%;
   left: 50%;
@@ -944,7 +851,6 @@ button svg {
   opacity: 0;
   visibility: hidden;
 }
- 
 
 .btnRemove > .imgStyleRemove {
   display: block;
@@ -974,8 +880,8 @@ button svg {
   justify-content: space-evenly;
 }
 .inputComment {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   font-weight: 500;
   font-size: 0.8vw;
@@ -997,7 +903,6 @@ button svg {
 .inputComment:focus {
   box-shadow: 0 0 0 0.15vw skyblue;
 }
-/* leave button css  */
 
 .btnLeave {
   background-color: transparent;
@@ -1008,7 +913,7 @@ button svg {
 }
 
 .btnLeave::after {
-  content: "Leave";
+  content: 'Leave';
   position: absolute;
   top: -130%;
   left: 50%;
@@ -1046,8 +951,6 @@ button svg {
   top: -160%;
 }
 
-/* add button css  */
-
 .btnAddComment {
   background-color: transparent;
   position: relative;
@@ -1077,7 +980,6 @@ button svg {
   top: -160%;
 }
 
-/* join session button  */
 .btnJoinSession {
   background-color: transparent;
   position: absolute;
@@ -1087,7 +989,7 @@ button svg {
 }
 
 .btnJoinSession::after {
-  content: "Add";
+  content: 'Add';
   position: absolute;
   top: -130%;
   left: 50%;
