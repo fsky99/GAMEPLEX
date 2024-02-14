@@ -29,8 +29,11 @@
     </div>
     </form>
     <% } %>
-<% if (game.sessionIds.length){ %>
-    <% game.sessionIds.forEach(session => { %>
+<% if (game.sessionIds.length){ 
+        game.sessionIds.sort((a,b) => {
+    return b.createdAt - a.createdAt;
+})%>
+    <% game.sessionIds.forEach(session => {%>
         
         <div>
             <h6>Location: <%= session.location %></h6>
