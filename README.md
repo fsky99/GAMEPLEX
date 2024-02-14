@@ -15,7 +15,7 @@ You can book sessions with people online, Also you acn specify the number of pla
 
 ---
 ### **_Game Link:_**
-##### Live Link:
+##### Live Link: [GAMEPLEEX](https://gameplex.fly.dev/)
 ---
 ### Screenshots:
 ## ERD:
@@ -51,6 +51,7 @@ You can book sessions with people online, Also you acn specify the number of pla
 
 - [x] CSS.
 - [x] EJS.
+- [x] MongoDB.
 
 ---
 ### What we are most proud of is :
