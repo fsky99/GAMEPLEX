@@ -53,7 +53,33 @@ You can book sessions with people online, Also you acn specify the number of pla
 
 ---
 ### What we are most proud of is :
+## Code in the backend for creating a session:
+`const createSession = async (req, res) => {
+  try {
+    console.log(req.user)
+    const session = new Session({
+      playerIds: [],
+      location: req.body.location,
+      date: req.body.date,
+      gameId: req.params.id,
+      max: req.body.max
+    })
+    session.playersIds.push(req.user._id)
+    await session.save()
+    const game = await Game.findById(req.params.id)
+    game.sessionIds.push(session._id)
+    await game.save()
+    const user = await User.findById(req.user._id)
+    user.sessionsId.push(session._id)
+    await user.save()
 
+    res.redirect(`/games/${req.params.id}`)
+  } catch (err) {
+    console.log(err)
+    res.redirect(`/games/${req.params.id}`)
+  }
+}
+`
 ---
 ### Future plans:
 
