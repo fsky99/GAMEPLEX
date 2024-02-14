@@ -18,7 +18,7 @@
     </div>
 
     <div class="form__group field">
-        <input type="date" class="form__field"  required="" name="date">
+        <input type="date" class="form__field date-input" required="" name="date">
         <label for="name" class="form__label"></label>
     </div>
     <div class="form__group field">
@@ -53,9 +53,7 @@
                     <% session.playersIds.forEach(player => { %>
                         <label> - <%= player.name %></label><br>
                     <% }); %>
-                </span>
-                <h6 class="h6Style"><%= session.playersIds.length %>/<%= session.max %></h6>
-                
+                </span>                
            
             <%if (user){ 
                 if (session.playersIds.length > 0){
