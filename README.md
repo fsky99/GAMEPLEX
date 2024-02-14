@@ -30,6 +30,12 @@ You can book sessions with people online, Also you acn specify the number of pla
 ## Profile Page ![Profile Page](P7.png)
 
 ## Website:
+## Home Page ![Home Page](HomePageWeb.png)
+## View All Games Page ![View All Games Page](viewAllGamesWeb.png)
+## Search For Game ![SearchGame](SearchGameWeb.png)
+## View Game Page ![View Game Page](ViewGameWeb.png)
+## Add Game Page ![Add Game Page](addNewGameWeb.png)
+
 
 
 ### Technologies used
