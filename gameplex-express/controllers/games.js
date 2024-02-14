@@ -25,12 +25,7 @@ function newGame(req, res) {
   res.render('games/new', { title: 'Add New Game', errorMsg: '' })
 }
 async function create(req, res) {
-  console.log(req.body)
-  // for (let key in req.body) {
-  //   if (req.body[key] === '') delete req.body[key];
-  // }
   try {
-    // req.body.sessionIds = []
     await Game.create(req.body)
     res.redirect('/games')
   } catch (err) {

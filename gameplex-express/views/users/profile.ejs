@@ -15,12 +15,10 @@
 </div>
 <div>
   <% if (user.sessionsId.length){ 
-     user.sessionsId.sort((a,b) => {
+    user.sessionsId.sort((a,b) => {
     return b.createdAt - a.createdAt;
 })
 %>
-
-
 
 <% user.sessionsId.forEach(session => { %>
 
@@ -36,17 +34,9 @@
           <label> - <%= player.name %> <br></label>
           <% }); %>
         </span>
-
       </div>
     </div>
-
     </div>
-
-
-
-
-
       <% })} %>
     </div>
-      <%- include('../partials/footer') %>
-      
+<%- include('../partials/footer') %>

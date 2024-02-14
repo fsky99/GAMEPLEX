@@ -989,7 +989,7 @@ button svg {
 }
 
 .btnJoinSession::after {
-  content: 'Add';
+  content: 'Join';
   position: absolute;
   top: -130%;
   left: 50%;

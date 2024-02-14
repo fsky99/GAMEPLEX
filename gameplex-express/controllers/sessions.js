@@ -4,7 +4,6 @@ const User = require('../models/user')
 
 const createSession = async (req, res) => {
   try {
-    console.log(req.user)
     const session = new Session({
       playerIds: [],
       location: req.body.location,
@@ -72,7 +71,6 @@ const leave = async (req, res) => {
 const removeSession = async (req, res) => {
   try {
     const session = await Session.findById(req.params.id)
-    console.log(req.params.id)
     for (let i = 0; i < session.playersIds.length; i++) {
       await User.updateOne(
         { _id: session.playersIds[i] },
