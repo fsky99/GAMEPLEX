@@ -78,14 +78,14 @@
             </form>
     
             <%} %>
-            <% if (session.playersIds.some(obj => obj.googleId === user.googleId)) { %>
+            <%if (session.playersIds.some(obj => obj.googleId === user.googleId)) { %>
                 <form action="/sessions/<%= session._id %>/leave?_method=PUT&id=<%= game._id %>" method="post">
                 <button class="btnLeave" type="submit" value="Leave Session">
                     <img class="imgStyleExit" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAABaUlEQVR4nO3aP07DMBQGcMOAvm9oUWHlIqgHY+0ChZtwAhbEARgCDN1YC5PfE5wgKKJBQkoiu1XJs/EneYzkn17+2C92tXNHSt4o8K5kbWIAb0oum7m50Ch5PfrEe4aQV+GQb30twLkzEgHmbWWCL2r1zlg0dl4FsudoqYixaKmIsQhwkcVbq4mQC5cDJCoFsscoeavAnc5mx0nfWgJUm7XWYzDGIsSTZ0K+bhaz1cd0epIkZCuMVUgH5mkQYxkShbEO6cJ8TianLkVIECYVSAfm+RcmJcggJjVIL2YXSO3cgQAvo7eNgGpXyGHz4CUPyebWMvUa1oQgfuhbkgrE5/BB9CHrLesQH7qctwzxMXsSqxCfw8bK57LVVWCVRfNByAcl75NvB22VAvmDSA5NbCEXUfOyCtHyx8pYtFTEWPT/VgQ/h2rmzt6hmnXwRc25qLHbOb1tHvIyGLI5eLZsK2NiAOsGEXPw7Au82GIvZp82KAAAAABJRU5ErkJggg==">
                   </button>
             </form>
-        </div>        </div>
             <%} %>
+        </div>        </div>
             <% if (session.playersIds.some(obj => obj.googleId === user.googleId)) {  %>
 
         <div class="slide two">
