@@ -577,6 +577,14 @@ button svg {
   transition: border-color 0.2s;
 }
 
+.form__field.date-input {
+  color: #fff; 
+}
+
+.form__field.date-input::-webkit-calendar-picker-indicator {
+  filter: brightness(0) invert(1);
+}
+
 .form__field::placeholder {
   color: transparent;
 }
@@ -585,6 +593,7 @@ button svg {
   font-size: 17px;
   cursor: text;
   top: 20px;
+  color: #fff;
 }
 
 .form__label {
@@ -615,7 +624,6 @@ button svg {
   font-weight: 700;
 }
 
-/* reset input */
 .form__field:required,
 .form__field:invalid {
   box-shadow: none;
@@ -626,7 +634,6 @@ button svg {
   justify-content: center;
 }
 
-/* create session button  */
 .CSButtton {
   padding: 0;
   margin: 0;
